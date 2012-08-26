@@ -1,0 +1,319 @@
+;; Object mwclient/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "mwclient/"
+  :tables (list 
+   (semanticdb-table "XmlParser.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("XmlParser.h" include nil nil [153 175])
+            ("DLog.h" include nil nil [176 193])
+            ("libxml/tree.h" include (:system-flag t) nil [195 219])
+            ("libxml/xpathInternals.h" include (:system-flag t) nil [220 254])
+            ("libxml/HTMLparser.h" include (:system-flag t) nil [255 285])
+            ("boost/algorithm/string.hpp" include (:system-flag t) nil [286 323])
+            ("XmlParser" function
+               (:constructor-flag t
+                :parent "XmlParser"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [347 353]))                  
+                :type ("XmlParser" type (:type "class") nil nil))
+                nil [325 447])
+            ("XmlParser" function
+               (:destructor-flag t
+                :parent "XmlParser"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [472 478]))                  
+                :type "void")
+                nil [449 492])
+            ("Reset" function
+               (:parent "XmlParser"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [516 521]))                  
+                :type "void")
+                nil [494 538])
+            ("reset" function
+               (:parent "XmlParser"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [563 569]))                  
+                :type "void")
+                nil [540 760])
+            ("SetXml" function
+               (:parent "XmlParser"
+                :arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [785 801])
+                    ("encoding" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [802 824]))                  
+                :type "int")
+                nil [762 884])
+            ("SetHtml" function
+               (:parent "XmlParser"
+                :arguments 
+                  ( ("buf_utf8" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [910 932]))                  
+                :type "int")
+                nil [886 996])
+            ("SetHtml" function
+               (:parent "XmlParser"
+                :arguments 
+                  ( ("buf_utf8" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1022 1051]))                  
+                :type "int")
+                nil [998 1123])
+            ("set_data" function
+               (:parent "XmlParser"
+                :arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1150 1166])
+                    ("encoding" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1167 1188])
+                    ("type" variable (:type ("xml_file_type_e" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1189 1211]))                  
+                :type "int")
+                nil [1125 3338])
+            ("GetNodeText" function
+               (:parent "XmlParser"
+                :arguments 
+                  ( ("text" variable
+                       (:reference 1
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3368 3386])
+                    ("node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3387 3404]))                  
+                :type "int")
+                nil [3340 3559])
+            ("EvalXPath" function
+               (:parent "XmlParser"
+                :arguments 
+                  ( ("node_set" variable
+                       (:reference 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("xmlNodePtr" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3587 3623])
+                    ("expr" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3624 3648])
+                    ("relative_node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3649 3675]))                  
+                :type "int")
+                nil [3561 3741])
+            ("EvalXPath" function
+               (:parent "XmlParser"
+                :arguments 
+                  ( ("node_set" variable
+                       (:reference 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("xmlNodePtr" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3769 3805])
+                    ("expr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3806 3823])
+                    ("relative_node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3824 3850]))                  
+                :type "int")
+                nil [3743 4598])
+            ("init_xpath_ctx" function
+               (:parent "XmlParser"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4631 4637]))                  
+                :type "int")
+                nil [4600 4859])
+            ("GetXPathFirstText" function
+               (:parent "XmlParser"
+                :arguments 
+                  ( ("text" variable
+                       (:reference 1
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4895 4913])
+                    ("expr" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4914 4938])
+                    ("relative_node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4939 4965]))                  
+                :type "int")
+                nil [4861 5035])
+            ("GetXPathFirstText" function
+               (:parent "XmlParser"
+                :arguments 
+                  ( ("text" variable
+                       (:reference 1
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5071 5089])
+                    ("expr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5090 5107])
+                    ("relative_node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5108 5134]))                  
+                :type "int")
+                nil [5037 5398])
+            ("GetXPathFirstTrimedText" function
+               (:parent "XmlParser"
+                :arguments 
+                  ( ("text" variable
+                       (:reference 1
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5440 5458])
+                    ("expr" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5459 5483])
+                    ("relative_node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5484 5510]))                  
+                :type "int")
+                nil [5400 5586])
+            ("GetXPathFirstTrimedText" function
+               (:parent "XmlParser"
+                :arguments 
+                  ( ("text" variable
+                       (:reference 1
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5628 5646])
+                    ("expr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5647 5664])
+                    ("relative_node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5665 5691]))                  
+                :type "int")
+                nil [5588 5805])
+            ("GetXPathText" function
+               (:parent "XmlParser"
+                :arguments 
+                  ( ("text" variable
+                       (:reference 1
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5836 5854])
+                    ("expr" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5855 5879])
+                    ("relative_node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5880 5906]))                  
+                :type "int")
+                nil [5807 5971])
+            ("GetXPathText" function
+               (:parent "XmlParser"
+                :arguments 
+                  ( ("text" variable
+                       (:reference 1
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6002 6020])
+                    ("expr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6021 6038])
+                    ("relative_node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6039 6065]))                  
+                :type "int")
+                nil [5973 6182])
+            ("GetXPathNoTrimedText" function
+               (:parent "XmlParser"
+                :arguments 
+                  ( ("text" variable
+                       (:reference 1
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6221 6239])
+                    ("expr" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6240 6264])
+                    ("relative_node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6265 6291]))                  
+                :type "int")
+                nil [6184 6364])
+            ("GetXPathNoTrimedText" function
+               (:parent "XmlParser"
+                :arguments 
+                  ( ("text" variable
+                       (:reference 1
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6403 6421])
+                    ("expr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6422 6439])
+                    ("relative_node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6440 6466]))                  
+                :type "int")
+                nil [6366 7273])
+            ("get_xpath_node_text" function
+               (:parent "XmlParser"
+                :arguments 
+                  ( ("is_empty" variable
+                       (:reference 1
+                        :type "bool")
+                        (reparse-symbol arg-sub-list) [7311 7326])
+                    ("text" variable
+                       (:reference 1
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7327 7345])
+                    ("expr" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7346 7363])
+                    ("relative_node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7364 7389]))                  
+                :type "int")
+                nil [7275 8446])
+            ("RegisterXPathNS" function
+               (:parent "XmlParser"
+                :arguments 
+                  ( ("prefix" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8480 8499])
+                    ("uri" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8500 8517]))                  
+                :type "int")
+                nil [8448 8707])
+            ("RegisterXPathDefNS" function
+               (:parent "XmlParser"
+                :arguments 
+                  ( ("prefix" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8744 8764]))                  
+                :type "int")
+                nil [8709 9276]))          
+    :file "XmlParser.cpp"
+    :pointmax 9278
+    :fsize 9277
+    :lastmodtime '(20224 21143)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!home!likui!Projects!trunk!taskcommon!mwclient!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.0"
+  )

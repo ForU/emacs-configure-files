@@ -1,0 +1,9 @@
+;; ################################################################
+;; cscope configure for trunk
+;; make database at the top-level-directory, and make sure
+;; no databases exist in subdirectory.
+;; 
+;; that means you must create database manually, and once you
+;; create a new file or subdirectory, you must add it to the
+;; databases manually too.
+(setq cscope-initial-directory "~/Projects/trunk/")

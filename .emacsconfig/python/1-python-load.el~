@@ -1,0 +1,5 @@
+;; python mode path
+(add-to-list 'load-path "~/.emacs.d/plugins/python-mode.el-6.0.4/")
+
+(require 'python-mode)
+(add-to-list 'auto-mode-alist '("\\.py'" . python-mode))

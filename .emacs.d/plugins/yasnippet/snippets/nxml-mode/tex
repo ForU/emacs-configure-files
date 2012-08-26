@@ -1,0 +1,4 @@
+<item parse_method="text_exist" input="$1" value_type="$2">
+  <text>$3</text>
+  <message>$0
+</item>

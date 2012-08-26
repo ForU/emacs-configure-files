@@ -1,0 +1,150 @@
+--- lib.el	2012-05-23 20:04:53.000000000 +0800
++++ lib.el.bak	2012-05-22 13:46:41.000000000 +0800
+@@ -19,64 +19,56 @@
+       (pop-to-buffer buf-name)
+     (pop-to-buffer (generate-new-buffer buf-name))))
+ 
+-;; ================================================================
+-
+-;; ================================================================
+-;; ;; works version, but functions limited
+-;; (defun write-buffer-substring-to-file(file-name buf-name start end &optional header-type)
+-;;   "write @param:buffer(named buf-name)'s substring marked by @start by
+-;;  @end to file named @param:file-name, and if buf-name is not yet exists,
+-;; then just create a new @buf-name buffer and return"
+-;;   ;; TODO:  1. argv check [1] file named file-name exists,
+-;;   ;;                      [2] start > end
+-;;   ;; 		2. start end to be &optional
+-;;   (let((file-buf-name (file-name-nondirectory file-name)))
+-;; 	(if (buffer-exists buf-name)
+-;; 		(if (buffer-exists file-buf-name)
+-;; 			(progn
+-;; 			  (set-buffer file-buf-name)
+-;; 			  (goto-char (point-max))	;append
+-;; 			  (newline)
+-;; 			  (if (string= header-type "1")			;1-level header
+-;; 				  (insert note-header))
+-;; 			  (if (string= header-type "2")			;2-level header
+-;; 				  (insert note-sub-header))
+-;; 			  (if (string= header-type "3")			;3-level header
+-;; 				  (insert note-sub-header))
+-;; 			  (insert-buffer-substring-no-properties buf-name start end)
+-;; 			  (save-buffer (buffer-name)))
+-;; 		  ;; else, file buf not exists
+-;; 		  (find-file file-name)
+-;; 		  (write-buffer-substring-to-file file-name buf-name start end))
+-;; 	  ;; else, buf:[buf-name] not exists
+-;; 	  (jump-to-buffer buf-name))))
+-;; 
+-;; (global-set-key [(control shift f11)]
+-;; 				(lambda()
+-;; 				  (interactive)
+-;; 				  (write-region-to-file "~/__note__.outline" (buffer-name) "3")))
+-;; ;; note with header 3
+-;; (global-set-key [(f11)]
+-;; 				(lambda()
+-;; 				  "write region to file"
+-;; 				  (interactive)
+-;; 				  (write-region-to-file "~/__note__.outline" (buffer-name) "0")))
+-;; ;; note with header 2
+-;; (global-set-key [(control f11)]
+-;; 				(lambda()
+-;; 				  "write whole buffer to file"
+-;; 				  (interactive)
+-;; 				  (write-region-to-file "~/__note__.outline" (buffer-name) "1")))
+-;; ;; note with header 1
+-;; (global-set-key [(shift f11)]
+-;; 				(lambda()
+-;; 				  (interactive)
+-;; 				  (write-region-to-file "~/__note__.outline" (buffer-name) "2")))
+-;; (global-set-key [(control shift f11)]
+-;; 				(lambda()
+-;; 				  (interactive)
+-;; 				  (write-region-to-file "~/__note__.outline" (buffer-name) "3")))
+-;; ================================================================
++(defun write-buffer-substring-to-file(file-name buf-name start end &optional to-save-restriction)
++  "write @param:buffer(named buf-name)'s substring marked by @start by
++ @end to file named @param:file-name, and if buf-name is not yet exists,
++then just create a new @buf-name buffer and return"
++  ;; TODO:  1. argv check [1] file named file-name exists,
++  ;;                      [2] start > end
++  ;; 		2. start end to be &optional
++  (let((file-buf-name (file-name-nondirectory file-name)))
++	(if (buffer-exists buf-name)
++		(if (buffer-exists file-buf-name)
++			(progn
++			  (set-buffer file-buf-name)
++			  (goto-char (point-max))	;append
++			  (newline)
++			  (if to-save-restriction
++				  (save-restriction			;make region stay on()
++					(insert note-line-separator)
++					(newline)
++					(insert-buffer-substring-no-properties buf-name start end))
++				(insert-buffer-substring-no-properties buf-name start end))
++			  (save-buffer (buffer-name))))
++		  ;; else, file buf not exists
++	  (find-file file-name)
++	  (write-buffer-substring-to-file file-name buf-name start end))
++	;; else, buf:[buf-name] not exists
++	(jump-to-buffer buf-name)))
++(defvar note-line-separator "* ================================")
++(defun write-region-to-file(file-name buf-name)
++  (interactive)
++  (if mark-active
++	  (write-buffer-substring-to-file file-name buf-name
++									  (region-beginning) (region-end) t)
++	(message "no region selected, do nothing !")))
++
++(global-set-key [(f11)]
++				(lambda()
++				  "write region to file"
++				  (interactive)
++				  (write-region-to-file "~/__note__.outline" (buffer-name))))
++(global-set-key [(control f11)]
++				(lambda()
++				  "write whole buffer to file"
++				  (interactive)
++				  (write-buffer-substring-to-file "~/__note__.outline" (buffer-name) (point-min) (point-max))))
++;; we can set a unique default file for each mode, so we can store information more efficiently
++;; tmp buffer
++(global-set-key [(shift f11)]
++				(lambda()
++				  (interactive)
++				  (jump-to-buffer "*tmp*")))
+ 
+ ;; ================================================================
+ (require 'term)
+@@ -117,18 +109,18 @@
+         (ansi-term term-cmd term-buf-name)))))
+ 
+ 
+-(global-set-key (kbd "<f12>")
+-				(lambda() (interactive)
+-				  (jump-to-terminal "c-term")))
+ (global-set-key [(control f12)]
+ 				(lambda() (interactive)
+-				  (jump-to-terminal "TS232")))
++				  (jump-to-terminal "common-term-1")))
+ (global-set-key [(shift f12)]
+ 				(lambda() (interactive)
+-				  (jump-to-terminal "264")))
++				  (jump-to-terminal "common-term-2")))
+ (global-set-key [(control shift f12)]
+ 				(lambda() (interactive)
+-				  (jump-to-terminal "mysql@264")))
++				  (jump-to-terminal "common-term-3")))
++(global-set-key (kbd "<f12>")
++				(lambda() (interactive)
++				  (jump-to-terminal "c-term")))
+ 
+ ;; ================================================================
+ ;; cua-mode, since cua-mode has no hook, then we define a keybinding here
+@@ -152,7 +144,6 @@
+   (setq cua-enable-cua-keys nil)
+   (cua-mode))
+ 
+-(provide 'lib)
+ ;; ================================================================
+ ;; end here.
+ ;; 2012-05-16 xiangshou24@gmail.com

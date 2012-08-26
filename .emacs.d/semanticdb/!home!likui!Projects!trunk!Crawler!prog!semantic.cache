@@ -1,0 +1,272 @@
+;; Object prog/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "prog/"
+  :tables (list 
+   (semanticdb-table "retriever.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("Executor.h" include nil nil [167 188])
+            ("CrawlBase.h" include nil nil [189 211])
+            ("CrawlerError.h" include nil nil [212 237])
+            ("CrawlFactory.h" include nil nil [238 263])
+            ("LSCrawlCommon.h" include nil nil [264 290])
+            ("params.h" include nil nil [291 310])
+            ("DLog.h" include nil nil [311 328])
+            ("DSimpConfig.h" include nil nil [329 353])
+            ("NonnativeCommon.h" include nil nil [354 382])
+            ("cr__generic.h" include nil nil [383 407])
+            ("DQChecker.h" include nil nil [408 430])
+            ("CurlDownload.h" include nil nil [431 456])
+            ("ott_uni_crawl.hpp" include nil nil [457 485])
+            ("WorkingContext.hpp" include nil nil [486 515])
+            ("string.h" include (:system-flag t) nil [517 536])
+            ("getopt.h" include (:system-flag t) nil [537 556])
+            ("stdlib.h" include (:system-flag t) nil [557 576])
+            ("stdio.h" include (:system-flag t) nil [577 595])
+            ("unistd.h" include (:system-flag t) nil [596 615])
+            ("MAX_BUFFER_LENGTH" variable (:constant-flag t) nil [625 642])
+            ("HOME_DIR_ENV_NAME" variable (:constant-flag t) nil [659 676])
+            ("CRAWLER_CONFIG_FILE" variable (:constant-flag t) nil [700 719])
+            ("WISE_PROXY_CONFIG_FILE" variable (:constant-flag t) nil [747 769])
+            ("CRAWLER_XPATH_XML_CONFIG_FILE" variable (:constant-flag t) nil [800 829])
+            ("MAX_DOWNLOAD_SIZE_CONFIG_FILE" variable (:constant-flag t) nil [856 885])
+            ("PROG_NAME" variable (:constant-flag t) nil [923 932])
+            ("LOG_FILE_NAME" variable (:constant-flag t) nil [953 966])
+            ("DQCHECKER_CONFIG_FILE" variable (:constant-flag t) nil [990 1011])
+            ("PR_VIDEO_STR" variable (:constant-flag t) nil [1042 1054])
+            ("PR_VIDEO_INT" variable (:constant-flag t) nil [1195 1207])
+            ("PR_VIDEO_DBL" variable (:constant-flag t) nil [1268 1280])
+            ("g_max_download_size_config" variable (:type ("DSimpConfig" type (:type "class") nil nil)) nil [1335 1405])
+            ("g_wise_proxy_config" variable (:type ("DSimpConfig" type (:type "class") nil nil)) nil [1335 1405])
+            ("g_config" variable (:type ("DSimpConfig" type (:type "class") nil nil)) nil [1335 1405])
+            ("print_help" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :type "void")
+                nil [1407 1432])
+            ("dump_video" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("video" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("video_t" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1456 1485]))                  
+                :type "int")
+                nil [1433 1486])
+            ("dump_ott_video" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("video" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("video_t" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1514 1542]))                  
+                :type "int")
+                nil [1487 1543])
+            ("dump_ott_list" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("video" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("video_t" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1570 1598]))                  
+                :type "int")
+                nil [1544 1599])
+            ("main_test" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [1622 1631])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1632 1644])
+                    ("short_opts" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1645 1668])
+                    ("long_opts" variable
+                       (:dereference 1
+                        :constant-flag t
+                        :type ("option" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1669 1701]))                  
+                :type "void")
+                nil [1600 1702])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [1714 1723])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1724 1739]))                  
+                :type "int")
+                nil [1704 9617])
+            ("main_test" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [9641 9650])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9651 9663])
+                    ("short_opts" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9664 9687])
+                    ("long_opts" variable
+                       (:dereference 1
+                        :constant-flag t
+                        :type ("option" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9688 9720]))                  
+                :type "void")
+                nil [9619 17062])
+            ("print_help" function
+               (:typemodifiers ("static")
+                :type "void")
+                nil [17064 18419])
+            ("dump_video" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("video" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("video_t" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18444 18473]))                  
+                :type "int")
+                nil [18421 19336])
+            ("dump_ott_video" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("video" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("video_t" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19365 19393]))                  
+                :type "int")
+                nil [19338 20409])
+            ("dump_ott_list" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("video" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("video_t" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20437 20465]))                  
+                :type "int")
+                nil [20411 21148]))          
+    :file "retriever.cpp"
+    :pointmax 21150
+    :fsize 21149
+    :lastmodtime '(20224 21174)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("LOG_FILE_NAME" . ((string "\"crawler.log\"" 967 . 980)))
+          ("WISE_PROXY_CONFIG_FILE" . ((string "\"etc/wise_proxy.conf\"" 770 . 791)))
+          ("DQCHECKER_CONFIG_FILE" . ((string "\"etc/dqchecker.conf\"" 1012 . 1032)))
+          ("PROG_NAME" . ((string "\"retriever\"" 933 . 944)))
+          ("HOME_DIR_ENV_NAME" . ((string "\"CRAWLER_HOME\"" 677 . 691)))
+          ("CRAWLER_CONFIG_FILE" . ((string "\"etc/crawler.conf\"" 720 . 738)))
+          ("PR_VIDEO_INT" (spp-arg-list ("video" "attr") 1207 . 1220) . ((symbol "printf" 1221 . 1227) (semantic-list "(#attr\": [%d]\\n\", (video).attr )" 1227 . 1259)))
+          ("MAX_BUFFER_LENGTH" . 
+              ((number "1024" 643 . 647) (punctuation "*" 647 . 648) (number "10" 648 . 650)))
+          ("PR_VIDEO_STR" (spp-arg-list ("video" "attr") 1054 . 1067) . 
+              ((DO "do" 1074 . 1076) (semantic-list "{ \\
+        if( (video).attr.GetLen() > 0) printf(#attr\": [%s]\\n\", (video).attr.Str()); \\
+    }" 1077 . 1172) (WHILE "while" 1173 . 1178) (semantic-list "(false)" 1178 . 1185)))
+          ("PR_VIDEO_DBL" (spp-arg-list ("video" "attr") 1280 . 1293) . ((symbol "printf" 1294 . 1300) (semantic-list "(#attr\": [%lf]\\n\", (video).attr )" 1300 . 1333)))
+          ("MAX_DOWNLOAD_SIZE_CONFIG_FILE" . ((string "\"etc/max_download_size.conf\"" 886 . 914)))
+          ("CRAWLER_XPATH_XML_CONFIG_FILE" . ((string "\"bin/crawler.xml\"" 830 . 847)))
+          )
+
+    )
+   (semanticdb-table "ott_list_text_identify_handler.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("ott_list_text_identify_handler.hpp" include nil nil [208 253])
+            ("CrawlBase.h" include nil nil [255 277])
+            ("DLog.h" include nil nil [278 295])
+            ("JsonFactory.h" include nil nil [296 320])
+            ("uni_crawl_parser.hpp" include nil nil [321 352])
+            ("WorkingContext.hpp" include nil nil [353 382])
+            ("ott_list_text_identify_handler" function
+               (:constructor-flag t
+                :parent "ott_list_text_identify_handler"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [448 453]))                  
+                :type ("ott_list_text_identify_handler" type (:type "class") nil nil))
+                nil [384 457])
+            ("ott_list_text_identify_handler" function
+               (:destructor-flag t
+                :parent "ott_list_text_identify_handler"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [524 529]))                  
+                :type "void")
+                nil [459 533])
+            ("parse_input" function
+               (:parent "ott_list_text_identify_handler"
+                :arguments 
+                  ( ("input" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("DStr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [584 602]))                  
+                :type "int")
+                nil [535 1362])
+            ("do_crawler_task" function
+               (:parent "ott_list_text_identify_handler"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1417 1422]))                  
+                :type "int")
+                nil [1364 2214])
+            ("generate_output" function
+               (:parent "ott_list_text_identify_handler"
+                :arguments 
+                  ( ("output" variable
+                       (:reference 1
+                        :type ("DStr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2269 2282]))                  
+                :type "int")
+                nil [2216 4412]))          
+    :file "ott_list_text_identify_handler.cpp"
+    :pointmax 4414
+    :fsize 4413
+    :lastmodtime '(20224 21174)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!home!likui!Projects!trunk!Crawler!prog!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.0"
+  )

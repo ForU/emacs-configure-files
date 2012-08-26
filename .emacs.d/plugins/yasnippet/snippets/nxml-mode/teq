@@ -1,0 +1,4 @@
+<item parse_method="text_equal" input="$1" value_type="string">
+  <text>$2</text>
+  <value>$0</value>
+</item>

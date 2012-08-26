@@ -1,0 +1,4 @@
+<item parse_method="from_xpath" input="$1" value_type="string">
+  <xpath>$2</xpath>
+  <regex>$0</regex>
+</item>

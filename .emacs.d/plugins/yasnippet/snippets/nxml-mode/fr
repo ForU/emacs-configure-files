@@ -1,0 +1,3 @@
+<item parse_method="from_regex" input="$1" value_type="string">
+  <regex>$0</regex>
+</item>

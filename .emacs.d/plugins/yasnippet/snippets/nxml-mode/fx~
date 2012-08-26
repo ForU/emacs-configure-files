@@ -1,0 +1,4 @@
+          <item parse_method="from_xpath" input="x_json_xml" value_type="string">
+            <xpath>//xml/item[@key='title']</xpath>
+            <regex></regex>
+          </item>

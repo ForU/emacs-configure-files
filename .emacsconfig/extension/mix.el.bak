@@ -1,0 +1,11 @@
+;;================================================================
+;; here is some interesting mixed extension, enjoy
+;;================================================================
+
+;;==============================move mouse========================
+;; Move the mouse to the screen corner on any keypress.
+(when (and (display-mouse-p) (require 'avoid nil t))
+  ;; Move the mouse to the lower-right corner instead of default upper-right
+  (defun mouse-avoidance-banish-destination ()
+    (cons (+ 3 (frame-width)) (frame-height)))
+  (mouse-avoidance-mode 'banish))

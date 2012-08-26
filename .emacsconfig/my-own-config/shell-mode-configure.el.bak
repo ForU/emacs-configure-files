@@ -1,0 +1,50 @@
+;; ;;================================================================
+;; ;;http://snarfed.org/space/why%20I%20don%27t%20run%20shells%20inside%20Emacs
+;; (custom-set-variables
+;;  '(comint-scroll-to-bottom-on-input t)  ; always insert at the bottom
+;;  '(comint-scroll-to-bottom-on-output t) ; always add output at the bottom
+;;  '(comint-scroll-show-maximum-output t) ; scroll to show max possible output
+;;  '(comint-completion-autolist t)        ; show completion list when ambiguous
+;;  '(comint-input-ignoredups t)           ; no duplicates in command history
+;;  '(comint-completion-addsuffix t)       ; insert space/slash after file completion
+;;  '(shell-completion-execonly nil)	; completion for file nonexecutable
+;;  )
+
+;; ;; interpret and use ansi color codes in shell output windows
+;; (ansi-color-for-comint-mode-on)
+
+
+;; ;;============================default_shell=======================
+;; ;;Set the dafault shell for Emacs:
+;; (setq explicit-shell-file-name "/bin/bash")
+
+
+;; ;;set maximum-buffer size for shell-mode
+;; ;;(useful if some program that you're debugging spews out large amounts of output). 
+;; (setq comint-buffer-maximum-size 1000)
+;; (setq auto-show-make-point-visible t) ; position cursor to end of output in shell mode, this is super-useful
+;; (add-hook 'comint-output-filter-functions
+;;           'comint-strip-ctrl-m		;remove ctrl-m from shell output
+;; 	  'comint-truncate-buffer	;truncate shell buffer to comint-buffer-maximum-size
+;; 	  'comint-watch-for-password-prompt ;Keep your PSW secretly in Emacs shell:
+;; 	  )
+
+
+;; ;;================================================================
+;; (defun cl nil
+;;   "put the current line to the top of the window"
+;;   (interactive)
+;;   (end-of-buffer)
+;;   (recenter 0))
+;; ()
+;; (add-hook 'shell-mode-hook
+;; 	  (lambda ()
+;; 	    (define-key shell-mode-map  "\C-l"   'cl)
+;; 	    (define-key shell-mode-map  [(up)] 	 'comint-previous-prompt)
+;; 	    (define-key shell-mode-map  [(down)] 'comint-next-prompt)
+;; 	    ))
+
+
+
+;; ;;================================================================
+;; ;;code ends here.

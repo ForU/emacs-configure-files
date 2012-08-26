@@ -1,0 +1,4 @@
+<field name="$1">
+  <item parse_method="$2" input="$3" value_type="string">
+  </item>
+</field>

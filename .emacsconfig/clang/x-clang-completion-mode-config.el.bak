@@ -1,0 +1,7 @@
+;; some configure for clang-completion-mode.el
+(require 'clang-completion-mode)
+
+(defun my-c-mode-common-hook-again()
+  (local-set-key "\M-l" (quote clang-complete))
+  )
+(add-hook 'c-mode-common-hook 'my-c-mode-common-hook-again)

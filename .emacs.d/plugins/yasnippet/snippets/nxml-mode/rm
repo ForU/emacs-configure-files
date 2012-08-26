@@ -1,0 +1,4 @@
+<item parse_method="regex_matched" input="$1" value_type="string">
+  <regex>$2</regex>
+  <value>$0</value>
+</item>

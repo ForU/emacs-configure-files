@@ -1,0 +1,854 @@
+;; Object bits/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bits/"
+  :tables (list 
+   (semanticdb-table "stl_vector.h"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("_STL_VECTOR_H" variable (:constant-flag t) nil [2744 2757])
+            ("bits/stl_iterator_base_funcs.h" include (:system-flag t) nil [2761 2802])
+            ("bits/functexcept.h" include (:system-flag t) nil [2803 2832])
+            ("bits/concept_check.h" include (:system-flag t) nil [2833 2864])
+            ("std" type
+               (:members 
+                  ( ("_Vector_base" type
+                       (:template 
+                          ( ("_Tp" type (:type "class") nil nil)
+                            ("_Alloc" type (:type "class") nil nil))                          
+                        :type "struct"
+                        :members 
+                          ( ("_Tp_alloc_type" variable (:type ("other" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3106 3127])
+                            ("_Vector_impl" type
+                               (:superclasses 
+                                  ( ("_Tp_alloc_type" type
+                                       (:protection "public"
+                                        :type "class")
+                                        nil nil))                                  
+                                :members 
+                                  ( ("_M_start" variable
+                                       (:pointer 1
+                                        :type ("_Tp" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3195 3219])
+                                    ("_M_finish" variable
+                                       (:pointer 1
+                                        :type ("_Tp" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3221 3246])
+                                    ("_M_end_of_storage" variable
+                                       (:pointer 1
+                                        :type ("_Tp" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3248 3281])
+                                    ("_Vector_impl" function
+                                       (:constructor-flag t
+                                        :type ("_Vector_impl" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [3284 3372])
+                                    ("_Vector_impl" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("__a" variable
+                                               (:reference 1
+                                                :constant-flag t
+                                                :type ("_Tp_alloc_type" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [3388 3414]))                                          
+                                        :type ("_Vector_impl" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [3375 3491]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [3135 3500])
+                            ("public" label nil (reparse-symbol classsubparts) [3512 3519])
+                            ("allocator_type" type
+                               (:typedef ("_Alloc" type (:type "class") nil nil)
+                                :superclasses "_Alloc"
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [3526 3556])
+                            ("_M_get_Tp_allocator" function (:type ("_Tp_alloc_type" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3564 3671])
+                            ("_M_get_Tp_allocator" function
+                               (:constant-flag t
+                                :type ("_Tp_alloc_type" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3679 3804])
+                            ("get_allocator" function (:type ("allocator_type" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3812 3910])
+                            ("_Vector_base" function
+                               (:constructor-flag t
+                                :type ("_Vector_base" type (:type "struct") nil nil))
+                                (reparse-symbol classsubparts) [3918 3954])
+                            ("_Vector_base" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("__a" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("allocator_type" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3975 4001]))                                  
+                                :type ("_Vector_base" type (:type "struct") nil nil))
+                                (reparse-symbol classsubparts) [3962 4026])
+                            ("_Vector_base" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("__n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4047 4058])
+                                    ("__a" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("allocator_type" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4059 4085]))                                  
+                                :type ("_Vector_base" type (:type "struct") nil nil))
+                                (reparse-symbol classsubparts) [4034 4288])
+                            ("_Vector_base" function
+                               (:destructor-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) [4691 4821])
+                            ("public" label nil (reparse-symbol classsubparts) [4827 4834])
+                            ("_M_impl" variable (:type ("_Vector_impl" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4841 4862])
+                            ("_M_allocate" function
+                               (:pointer 1
+                                :arguments 
+                                  ( ("__n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4893 4904]))                                  
+                                :type ("_Tp" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4870 4959])
+                            ("_M_deallocate" function
+                               (:arguments 
+                                  ( ("__p" variable
+                                       (:pointer 1
+                                        :type ("_Tp" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4992 5001])
+                                    ("__n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5002 5013]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [4967 5072]))                          )
+                        (reparse-symbol namespacesubparts) [2983 5079])
+                    ("vector" type
+                       (:superclasses 
+                          ( ("_Vector_base" type
+                               (:protection "protected"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("_Alloc_value_type" type
+                               (:typedef ("_Alloc::value_type" type (:type "class") nil nil)
+                                :superclasses "_Alloc::value_type"
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [6071 6140])
+                            ("_Base" type
+                               (:typedef ("_Vector_base" type
+                                     (:template-specifier 
+                                        ( ("_Tp" type nil nil nil)
+                                          ("_Alloc" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :superclasses "_Vector_base"
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [6287 6330])
+                            ("vector_type" type
+                               (:typedef ("vector" type
+                                     (:template-specifier 
+                                        ( ("_Tp" type nil nil nil)
+                                          ("_Alloc" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :superclasses "vector"
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [6337 6380])
+                            ("_Tp_alloc_type" type
+                               (:typedef ("_Base::_Tp_alloc_type" type (:type "class") nil nil)
+                                :superclasses "_Base::_Tp_alloc_type"
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [6387 6443])
+                            ("public" label nil (reparse-symbol classsubparts) [6449 6456])
+                            ("value_type" type
+                               (:typedef ("_Tp" type (:type "class") nil nil)
+                                :superclasses "_Tp"
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [6463 6491])
+                            ("pointer" type
+                               (:typedef ("_Tp_alloc_type::pointer" type (:type "class") nil nil)
+                                :superclasses "_Tp_alloc_type::pointer"
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [6498 6557])
+                            ("const_pointer" type
+                               (:typedef ("_Tp_alloc_type::const_pointer" type (:type "class") nil nil)
+                                :superclasses "_Tp_alloc_type::const_pointer"
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [6564 6629])
+                            ("reference" type
+                               (:typedef ("_Tp_alloc_type::reference" type (:type "class") nil nil)
+                                :superclasses "_Tp_alloc_type::reference"
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [6636 6697])
+                            ("const_reference" type
+                               (:typedef ("_Tp_alloc_type::const_reference" type (:type "class") nil nil)
+                                :superclasses "_Tp_alloc_type::const_reference"
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [6704 6771])
+                            ("iterator" type
+                               (:typedef ("__gnu_cxx::__normal_iterator" type
+                                     (:template-specifier 
+                                        ( ("pointer" type nil nil nil)
+                                          ("vector_type" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :superclasses "__gnu_cxx::__normal_iterator"
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [6778 6846])
+                            ("const_iterator" type
+                               (:typedef ("__gnu_cxx::__normal_iterator" type
+                                     (:template-specifier 
+                                        ( ("const_pointer" type nil nil nil)
+                                          ("vector_type" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :superclasses "__gnu_cxx::__normal_iterator"
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [6853 6939])
+                            ("const_reverse_iterator" type
+                               (:typedef ("std::reverse_iterator" type
+                                     (:template-specifier 
+                                        ( ("const_iterator" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :superclasses "std::reverse_iterator"
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [6946 7016])
+                            ("reverse_iterator" type
+                               (:typedef ("std::reverse_iterator" type
+                                     (:template-specifier 
+                                        ( ("iterator" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :superclasses "std::reverse_iterator"
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [7023 7082])
+                            ("size_type" type
+                               (:typedef ("size_t" type (:type "class") nil nil)
+                                :superclasses "size_t"
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [7089 7119])
+                            ("difference_type" type
+                               (:typedef ("ptrdiff_t" type (:type "class") nil nil)
+                                :superclasses "ptrdiff_t"
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [7126 7165])
+                            ("allocator_type" type
+                               (:typedef ("_Alloc" type (:type "class") nil nil)
+                                :superclasses "_Alloc"
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [7172 7228])
+                            ("protected" label nil (reparse-symbol classsubparts) [7234 7244])
+                            ("_Base::_M_allocate" variable (:type "int") (reparse-symbol classsubparts) [7257 7276])
+                            ("_Base::_M_deallocate" variable (:type "int") (reparse-symbol classsubparts) [7289 7310])
+                            ("_Base::_M_impl" variable (:type "int") (reparse-symbol classsubparts) [7323 7338])
+                            ("_Base::_M_get_Tp_allocator" variable (:type "int") (reparse-symbol classsubparts) [7351 7378])
+                            ("public" label nil (reparse-symbol classsubparts) [7384 7391])
+                            ("vector" function
+                               (:constructor-flag t
+                                :type ("vector" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [7592 7620])
+                            ("vector" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("__a" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("allocator_type" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [7766 7792]))                                  
+                                :type ("explicit" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [7744 7815])
+                            ("vector" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("__n" variable (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8166 8180])
+                                    ("__value" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("value_type" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [8181 8208])
+                                    ("" variable (:type ("value_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8209 8221])
+                                    ("__a" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("allocator_type" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [8229 8256])
+                                    ("" variable (:type ("allocator_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8257 8273]))                                  
+                                :type ("explicit" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [8144 8342])
+                            ("vector" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("__x" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("vector" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [8728 8746]))                                  
+                                :type ("vector" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [8721 8964])
+                            ("vector" function
+                               (:template 
+                                  ( ("_InputIterator" type (:type "class") nil nil))                                  
+                                :type ("vector" type (:type "class") nil nil)
+                                :arguments 
+                                  ( ("__first" variable (:type ("_InputIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10101 10124])
+                                    ("__last" variable (:type ("_InputIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10125 10147])
+                                    ("__a" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("allocator_type" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [10156 10183])
+                                    ("" variable (:type ("allocator_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10184 10200]))                                  
+                                :constructor-flag t)
+                                (reparse-symbol classsubparts) [10052 10431])
+                            ("vector" function
+                               (:destructor-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) [10690 10804])
+                            ("=" function
+                               (:prototype-flag t
+                                :operator-flag t
+                                :arguments 
+                                  ( ("__x" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("vector" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [11188 11206]))                                  
+                                :type ("vector" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [11164 11207])
+                            ("assign" function
+                               (:arguments 
+                                  ( ("__n" variable (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12142 12156])
+                                    ("__val" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("value_type" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [12157 12181]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [12124 12219])
+                            ("assign" function
+                               (:template 
+                                  ( ("_InputIterator" type (:type "class") nil nil))                                  
+                                :type "void"
+                                :arguments 
+                                  ( ("__first" variable (:type ("_InputIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12763 12786])
+                                    ("__last" variable (:type ("_InputIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12787 12809]))                                  )
+                                (reparse-symbol classsubparts) [12701 13021])
+                            ("_Base::get_allocator" variable (:type "int") (reparse-symbol classsubparts) [13089 13110])
+                            ("begin" function (:type ("iterator" type (:type "class") nil nil)) (reparse-symbol classsubparts) [13312 13385])
+                            ("begin" function (:type ("const_iterator" type (:type "class") nil nil)) (reparse-symbol classsubparts) [13578 13669])
+                            ("end" function (:type ("iterator" type (:type "class") nil nil)) (reparse-symbol classsubparts) [13857 13929])
+                            ("end" function (:type ("const_iterator" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14127 14217])
+                            ("rbegin" function (:type ("reverse_iterator" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14406 14479])
+                            ("rbegin" function (:type ("const_reverse_iterator" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14678 14769])
+                            ("rend" function (:type ("reverse_iterator" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14970 15043])
+                            ("rend" function (:type ("const_reverse_iterator" type (:type "class") nil nil)) (reparse-symbol classsubparts) [15254 15345])
+                            ("size" function (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol classsubparts) [16653 16759])
+                            ("max_size" function (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol classsubparts) [16834 16917])
+                            ("resize" function
+                               (:arguments 
+                                  ( ("__new_size" variable (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17485 17506])
+                                    ("__x" variable (:type ("value_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17507 17523])
+                                    ("" variable (:type ("value_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17524 17536]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [17467 17686])
+                            ("capacity" function (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol classsubparts) [17837 17959])
+                            ("empty" function (:type "bool") (reparse-symbol classsubparts) [18080 18139])
+                            ("reserve" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("__n" variable (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18967 18981]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [18948 18982])
+                            ("[]" function
+                               (:operator-flag t
+                                :arguments 
+                                  ( ("__n" variable (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19506 19520]))                                  
+                                :type ("reference" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [19479 19570])
+                            ("[]" function
+                               (:operator-flag t
+                                :arguments 
+                                  ( ("__n" variable (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20086 20100]))                                  
+                                :type ("const_reference" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [20053 20156])
+                            ("protected" label nil (reparse-symbol classsubparts) [20162 20172])
+                            ("_M_range_check" function
+                               (:arguments 
+                                  ( ("__n" variable (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20249 20263]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [20223 20367])
+                            ("public" label nil (reparse-symbol classsubparts) [20373 20380])
+                            ("at" function
+                               (:arguments 
+                                  ( ("__n" variable (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20912 20926]))                                  
+                                :type ("reference" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [20893 20987])
+                            ("at" function
+                               (:arguments 
+                                  ( ("__n" variable (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21536 21550]))                                  
+                                :type ("const_reference" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [21511 21616])
+                            ("front" function (:type ("reference" type (:type "class") nil nil)) (reparse-symbol classsubparts) [21744 21794])
+                            ("front" function (:type ("const_reference" type (:type "class") nil nil)) (reparse-symbol classsubparts) [21932 21994])
+                            ("back" function (:type ("reference" type (:type "class") nil nil)) (reparse-symbol classsubparts) [22121 22174])
+                            ("back" function (:type ("const_reference" type (:type "class") nil nil)) (reparse-symbol classsubparts) [22317 22382])
+                            ("data" function (:type ("pointer" type (:type "class") nil nil)) (reparse-symbol classsubparts) [22686 22756])
+                            ("data" function (:type ("const_pointer" type (:type "class") nil nil)) (reparse-symbol classsubparts) [22764 22852])
+                            ("push_back" function
+                               (:arguments 
+                                  ( ("__x" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("value_type" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [23371 23393]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [23350 23612])
+                            ("pop_back" function (:type "void") (reparse-symbol classsubparts) [24313 24427])
+                            ("insert" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("__position" variable (:type ("iterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25713 25733])
+                                    ("__x" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("value_type" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [25734 25756]))                                  
+                                :type ("iterator" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [25691 25757])
+                            ("insert" function
+                               (:arguments 
+                                  ( ("__position" variable (:type ("iterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27058 27078])
+                                    ("__n" variable (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27079 27093])
+                                    ("__x" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("value_type" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [27094 27116]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [27040 27164])
+                            ("insert" function
+                               (:template 
+                                  ( ("_InputIterator" type (:type "class") nil nil))                                  
+                                :type "void"
+                                :arguments 
+                                  ( ("__position" variable (:type ("iterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27796 27816])
+                                    ("__first" variable (:type ("_InputIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27817 27840])
+                                    ("__last" variable (:type ("_InputIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27849 27871]))                                  )
+                                (reparse-symbol classsubparts) [27734 28095])
+                            ("erase" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("__position" variable (:type ("iterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28860 28880]))                                  
+                                :type ("iterator" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [28839 28881])
+                            ("erase" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("__first" variable (:type ("iterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29819 29836])
+                                    ("__last" variable (:type ("iterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29837 29853]))                                  
+                                :type ("iterator" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [29798 29854])
+                            ("swap" function
+                               (:arguments 
+                                  ( ("__x" variable
+                                       (:reference 1
+                                        :type ("vector" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [30359 30371]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [30278 30786])
+                            ("clear" function (:type "void") (reparse-symbol classsubparts) [31081 31150])
+                            ("protected" label nil (reparse-symbol classsubparts) [31156 31166])
+                            ("_M_allocate_and_copy" function
+                               (:template 
+                                  ( ("_ForwardIterator" type (:type "class") nil nil))                                  
+                                :type ("pointer" type (:type "class") nil nil)
+                                :arguments 
+                                  ( ("__n" variable (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31427 31441])
+                                    ("__first" variable (:type ("_ForwardIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31450 31475])
+                                    ("__last" variable (:type ("_ForwardIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31476 31500]))                                  )
+                                (reparse-symbol classsubparts) [31346 31794])
+                            ("_M_initialize_dispatch" function
+                               (:template 
+                                  ( ("_Integer" type (:type "class") nil nil))                                  
+                                :type "void"
+                                :arguments 
+                                  ( ("__n" variable (:type ("_Integer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32087 32100])
+                                    ("__value" variable (:type ("_Integer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32101 32118])
+                                    ("" variable (:type ("__true_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32119 32131]))                                  )
+                                (reparse-symbol classsubparts) [32015 32371])
+                            ("_M_initialize_dispatch" function
+                               (:template 
+                                  ( ("_InputIterator" type (:type "class") nil nil))                                  
+                                :type "void"
+                                :arguments 
+                                  ( ("__first" variable (:type ("_InputIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32522 32545])
+                                    ("__last" variable (:type ("_InputIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32546 32568])
+                                    ("" variable (:type ("__false_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32579 32592]))                                  )
+                                (reparse-symbol classsubparts) [32444 32760])
+                            ("_M_range_initialize" function
+                               (:template 
+                                  ( ("_InputIterator" type (:type "class") nil nil))                                  
+                                :type "void"
+                                :arguments 
+                                  ( ("__first" variable (:type ("_InputIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32899 32922])
+                                    ("__last" variable (:type ("_InputIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32930 32952])
+                                    ("" variable (:type ("std::input_iterator_tag" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32953 32977]))                                  )
+                                (reparse-symbol classsubparts) [32824 33056])
+                            ("_M_range_initialize" function
+                               (:template 
+                                  ( ("_ForwardIterator" type (:type "class") nil nil))                                  
+                                :type "void"
+                                :arguments 
+                                  ( ("__first" variable (:type ("_ForwardIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [33197 33222])
+                                    ("__last" variable (:type ("_ForwardIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [33230 33254])
+                                    ("" variable (:type ("std::forward_iterator_tag" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [33255 33281]))                                  )
+                                (reparse-symbol classsubparts) [33120 33607])
+                            ("_M_fill_initialize" function
+                               (:arguments 
+                                  ( ("__n" variable (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [33751 33765])
+                                    ("__value" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("value_type" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [33766 33792]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [33721 33972])
+                            ("_M_assign_dispatch" function
+                               (:template 
+                                  ( ("_Integer" type (:type "class") nil nil))                                  
+                                :type "void"
+                                :arguments 
+                                  ( ("__n" variable (:type ("_Integer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [34335 34348])
+                                    ("__val" variable (:type ("_Integer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [34349 34364])
+                                    ("" variable (:type ("__true_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [34365 34377]))                                  )
+                                (reparse-symbol classsubparts) [34267 34417])
+                            ("_M_assign_dispatch" function
+                               (:template 
+                                  ( ("_InputIterator" type (:type "class") nil nil))                                  
+                                :type "void"
+                                :arguments 
+                                  ( ("__first" variable (:type ("_InputIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [34559 34582])
+                                    ("__last" variable (:type ("_InputIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [34583 34605])
+                                    ("" variable (:type ("__false_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [34612 34625]))                                  )
+                                (reparse-symbol classsubparts) [34485 34787])
+                            ("_M_assign_aux" function
+                               (:template 
+                                  ( ("_InputIterator" type (:type "class") nil nil))                                  
+                                :type "void"
+                                :arguments 
+                                  ( ("__first" variable (:type ("_InputIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [34916 34939])
+                                    ("__last" variable (:type ("_InputIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [34940 34962])
+                                    ("" variable (:type ("std::input_iterator_tag" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [34971 34995]))                                  
+                                :prototype-flag t)
+                                (reparse-symbol classsubparts) [34847 34996])
+                            ("_M_assign_aux" function
+                               (:template 
+                                  ( ("_ForwardIterator" type (:type "class") nil nil))                                  
+                                :type "void"
+                                :arguments 
+                                  ( ("__first" variable (:type ("_ForwardIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35127 35152])
+                                    ("__last" variable (:type ("_ForwardIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35153 35177])
+                                    ("" variable (:type ("std::forward_iterator_tag" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35186 35212]))                                  
+                                :prototype-flag t)
+                                (reparse-symbol classsubparts) [35056 35213])
+                            ("_M_fill_assign" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("__n" variable (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35349 35363])
+                                    ("__val" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("value_type" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [35364 35388]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [35323 35389])
+                            ("_M_insert_dispatch" function
+                               (:template 
+                                  ( ("_Integer" type (:type "class") nil nil))                                  
+                                :type "void"
+                                :arguments 
+                                  ( ("__pos" variable (:type ("iterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35668 35683])
+                                    ("__n" variable (:type ("_Integer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35684 35697])
+                                    ("__val" variable (:type ("_Integer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35698 35713])
+                                    ("" variable (:type ("__true_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35720 35732]))                                  )
+                                (reparse-symbol classsubparts) [35600 35779])
+                            ("_M_insert_dispatch" function
+                               (:template 
+                                  ( ("_InputIterator" type (:type "class") nil nil))                                  
+                                :type "void"
+                                :arguments 
+                                  ( ("__pos" variable (:type ("iterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35921 35936])
+                                    ("__first" variable (:type ("_InputIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35937 35960])
+                                    ("__last" variable (:type ("_InputIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35967 35989])
+                                    ("" variable (:type ("__false_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35990 36003]))                                  )
+                                (reparse-symbol classsubparts) [35847 36174])
+                            ("_M_range_insert" function
+                               (:template 
+                                  ( ("_InputIterator" type (:type "class") nil nil))                                  
+                                :type "void"
+                                :arguments 
+                                  ( ("__pos" variable (:type ("iterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [36305 36320])
+                                    ("__first" variable (:type ("_InputIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [36321 36344])
+                                    ("__last" variable (:type ("_InputIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [36348 36370])
+                                    ("" variable (:type ("std::input_iterator_tag" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [36371 36395]))                                  
+                                :prototype-flag t)
+                                (reparse-symbol classsubparts) [36234 36396])
+                            ("_M_range_insert" function
+                               (:template 
+                                  ( ("_ForwardIterator" type (:type "class") nil nil))                                  
+                                :type "void"
+                                :arguments 
+                                  ( ("__pos" variable (:type ("iterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [36529 36544])
+                                    ("__first" variable (:type ("_ForwardIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [36545 36570])
+                                    ("__last" variable (:type ("_ForwardIterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [36574 36598])
+                                    ("" variable (:type ("std::forward_iterator_tag" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [36599 36625]))                                  
+                                :prototype-flag t)
+                                (reparse-symbol classsubparts) [36456 36626])
+                            ("_M_fill_insert" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("__pos" variable (:type ("iterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [36764 36779])
+                                    ("__n" variable (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [36780 36794])
+                                    ("__x" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("value_type" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [36795 36817]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [36738 36818])
+                            ("_M_insert_aux" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("__position" variable (:type ("iterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [36917 36937])
+                                    ("__x" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("value_type" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [36938 36960]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [36892 36961])
+                            ("_M_check_len" function
+                               (:arguments 
+                                  ( ("__n" variable (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37152 37166])
+                                    ("__s" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type "char")
+                                        (reparse-symbol arg-sub-list) [37167 37183]))                                  
+                                :type ("size_type" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [37123 37399])
+                            ("_M_erase_at_end" function
+                               (:arguments 
+                                  ( ("__pos" variable (:type ("pointer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37569 37583]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [37542 37704]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [5977 37711])
+                    ("==" function
+                       (:template 
+                          ( ("_Tp" type (:type "class") nil nil)
+                            ("_Alloc" type (:type "class") nil nil))                          
+                        :type "bool"
+                        :arguments 
+                          ( ("__x" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("vector" type
+                                     (:template-specifier 
+                                        ( ("_Tp" type nil nil nil)
+                                          ("_Alloc" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [38197 38228])
+                            ("__y" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("vector" type
+                                     (:template-specifier 
+                                        ( ("_Tp" type nil nil nil)
+                                          ("_Alloc" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [38229 38260]))                          
+                        :typemodifiers ("inline")
+                        :operator-flag t)
+                        (reparse-symbol namespacesubparts) [38126 38361])
+                    ("<" function
+                       (:template 
+                          ( ("_Tp" type (:type "class") nil nil)
+                            ("_Alloc" type (:type "class") nil nil))                          
+                        :type "bool"
+                        :arguments 
+                          ( ("__x" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("vector" type
+                                     (:template-specifier 
+                                        ( ("_Tp" type nil nil nil)
+                                          ("_Alloc" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [38852 38883])
+                            ("__y" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("vector" type
+                                     (:template-specifier 
+                                        ( ("_Tp" type nil nil nil)
+                                          ("_Alloc" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [38884 38915]))                          
+                        :typemodifiers ("inline")
+                        :operator-flag t)
+                        (reparse-symbol namespacesubparts) [38782 39015])
+                    ("!=" function
+                       (:template 
+                          ( ("_Tp" type (:type "class") nil nil)
+                            ("_Alloc" type (:type "class") nil nil))                          
+                        :type "bool"
+                        :arguments 
+                          ( ("__x" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("vector" type
+                                     (:template-specifier 
+                                        ( ("_Tp" type nil nil nil)
+                                          ("_Alloc" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [39116 39147])
+                            ("__y" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("vector" type
+                                     (:template-specifier 
+                                        ( ("_Tp" type nil nil nil)
+                                          ("_Alloc" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [39148 39179]))                          
+                        :typemodifiers ("inline")
+                        :operator-flag t)
+                        (reparse-symbol namespacesubparts) [39045 39209])
+                    (">" function
+                       (:template 
+                          ( ("_Tp" type (:type "class") nil nil)
+                            ("_Alloc" type (:type "class") nil nil))                          
+                        :type "bool"
+                        :arguments 
+                          ( ("__x" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("vector" type
+                                     (:template-specifier 
+                                        ( ("_Tp" type nil nil nil)
+                                          ("_Alloc" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [39308 39339])
+                            ("__y" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("vector" type
+                                     (:template-specifier 
+                                        ( ("_Tp" type nil nil nil)
+                                          ("_Alloc" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [39340 39371]))                          
+                        :typemodifiers ("inline")
+                        :operator-flag t)
+                        (reparse-symbol namespacesubparts) [39238 39397])
+                    ("<=" function
+                       (:template 
+                          ( ("_Tp" type (:type "class") nil nil)
+                            ("_Alloc" type (:type "class") nil nil))                          
+                        :type "bool"
+                        :arguments 
+                          ( ("__x" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("vector" type
+                                     (:template-specifier 
+                                        ( ("_Tp" type nil nil nil)
+                                          ("_Alloc" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [39497 39528])
+                            ("__y" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("vector" type
+                                     (:template-specifier 
+                                        ( ("_Tp" type nil nil nil)
+                                          ("_Alloc" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [39529 39560]))                          
+                        :typemodifiers ("inline")
+                        :operator-flag t)
+                        (reparse-symbol namespacesubparts) [39426 39589])
+                    (">=" function
+                       (:template 
+                          ( ("_Tp" type (:type "class") nil nil)
+                            ("_Alloc" type (:type "class") nil nil))                          
+                        :type "bool"
+                        :arguments 
+                          ( ("__x" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("vector" type
+                                     (:template-specifier 
+                                        ( ("_Tp" type nil nil nil)
+                                          ("_Alloc" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [39689 39720])
+                            ("__y" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("vector" type
+                                     (:template-specifier 
+                                        ( ("_Tp" type nil nil nil)
+                                          ("_Alloc" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [39721 39752]))                          
+                        :typemodifiers ("inline")
+                        :operator-flag t)
+                        (reparse-symbol namespacesubparts) [39618 39781])
+                    ("swap" function
+                       (:template 
+                          ( ("_Tp" type (:type "class") nil nil)
+                            ("_Alloc" type (:type "class") nil nil))                          
+                        :type "void"
+                        :arguments 
+                          ( ("__x" variable
+                               (:reference 1
+                                :type ("vector" type
+                                     (:template-specifier 
+                                        ( ("_Tp" type nil nil nil)
+                                          ("_Alloc" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [39881 39906])
+                            ("__y" variable
+                               (:reference 1
+                                :type ("vector" type
+                                     (:template-specifier 
+                                        ( ("_Tp" type nil nil nil)
+                                          ("_Alloc" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [39907 39932]))                          
+                        :typemodifiers ("inline"))
+                        (reparse-symbol namespacesubparts) [39816 39955]))                  
+                :type "namespace")
+                nil [2866 40315]))          
+    :file "stl_vector.h"
+    :pointmax 40344
+    :fsize 40343
+    :lastmodtime '(19608 46693)
+    :unmatched-syntax '((semantic-list 17534 . 17536) (punctuation 17522 . 17523) (USING 13083 . 13088) (semantic-list 10198 . 10200) (punctuation 10182 . 10183) (semantic-list 8271 . 8273) (punctuation 8255 . 8256) (semantic-list 8219 . 8221) (punctuation 8207 . 8208) (USING 7345 . 7350) ...)
+    :lexical-table 
+        '(("_STL_VECTOR_H" . ((number "1" 2758 . 2759)))
+          )
+
+    )
+   )
+  :file "!usr!include!c++!4.3!bits!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.0"
+  )

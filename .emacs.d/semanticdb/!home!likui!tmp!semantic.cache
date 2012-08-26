@@ -1,0 +1,65 @@
+;; Object tmp/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "tmp/"
+  :tables (list 
+   (semanticdb-table "t.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1 19])
+            ("x" type
+               (:members 
+                  ( ("i" variable (:type "int") (reparse-symbol classsubparts) [34 40])
+                    ("c" variable (:type "char") (reparse-symbol classsubparts) [42 49]))                  
+                :type "struct")
+                nil [22 52])
+            ("y" type
+               (:members 
+                  ( ("ii" variable (:type "int") (reparse-symbol classsubparts) [66 73])
+                    ("xx" variable (:type ("x" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [78 90]))                  
+                :type "struct")
+                nil [54 93])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [104 113])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [114 127]))                  
+                :type "int")
+                nil [95 206]))          
+    :file "t.c"
+    :pointmax 212
+    :fsize 206
+    :lastmodtime '(20224 25015)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "atoi.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("stdlib.h" include (:system-flag t) nil [1 20])
+            ("stdio.h" include (:system-flag t) nil [21 39])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [50 59])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [60 73]))                  
+                :type "int")
+                nil [41 450]))          
+    :file "atoi.c"
+    :pointmax 451
+    :fsize 450
+    :lastmodtime '(20531 27637)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!home!likui!tmp!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.0"
+  )

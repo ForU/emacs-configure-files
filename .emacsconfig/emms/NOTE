@@ -1,0 +1,17 @@
+l|================================================================
+there is a dependency in the dir:
+that is load in order by name, so the name of each file
+is fixed to fit the order for ~/.emacs to load.
+(except that my* files)
+
+~/.emacs
+add-to-load-path.el
+anything.el
+anything-emms.el
+emms-configure.el
+emms-extension.el
+
+;;save on < Fri Apr  9 12:03:23 2010 >
+
+|================================================================
+|end here.

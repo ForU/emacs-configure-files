@@ -1,0 +1,18 @@
+;; Object json/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "json/"
+  :tables (list 
+   (semanticdb-table "list_trailer_ti.json"
+    :major-mode 'js-mode
+    :tags nil
+    :file "list_trailer_ti.json"
+    :pointmax 612
+    :fsize 611
+    :lastmodtime '(20531 35023)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!home!likui!Projects!trunk!Crawler!json!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.0"
+  )

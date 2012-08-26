@@ -1,0 +1,4 @@
+<item parse_method="curl_download" input="$1" value_type="string">
+  <url use_input="1">$1</url>
+  <sleep></sleep>
+</item>
