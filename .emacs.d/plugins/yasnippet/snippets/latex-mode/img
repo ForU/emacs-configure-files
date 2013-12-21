@@ -1,0 +1,6 @@
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=\textwidth,height=80mm]{$1.png}
+  \caption{$0}
+  \label{overflow}
+\end{figure}

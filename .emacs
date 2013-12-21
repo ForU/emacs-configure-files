@@ -1,6 +1,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ================================================================	   ;;
-;; .emacs configure principles:       				       		   ;;
+;; .emacs configure principles:       				       		       ;;
 ;; 1 extension , myconfig and programconf loads elispfiles	       	   ;;
 ;; 2 need_load_path is not included in the autoload path(above),   	   ;;
 ;;   so there is no need to put files in the autoload path to      	   ;;
@@ -26,9 +26,9 @@
 (mapc   'load (directory-files "~/.emacsconfig/org-mode"        t "\\.el$"))
 ;;(mapc 'load (directory-files "~/.emacsconfig/w3m"             t "\\.el$"))
 (mapc   'load (directory-files "~/.emacsconfig/color-theme"     t "\\.el$"))
-;;(mapc   'load (directory-files "~/.emacsconfig/company-mode"    t "\\.el$"))
+;;(mapc 'load (directory-files "~/.emacsconfig/company-mode"    t "\\.el$"))
 (mapc   'load (directory-files "~/.emacsconfig/emms"            t "\\.el$"))
-;;(mapc   'load (directory-files "~/.emacsconfig/gccsence/"       t "\\.el$"))
+;;(mapc 'load (directory-files "~/.emacsconfig/gccsence/"       t "\\.el$"))
 (mapc   'load (directory-files "~/.emacsconfig/xcscope"         t "\\.el$"))
 (mapc   'load (directory-files "~/.emacsconfig/my-programconf"  t "\\.el$"))
 (mapc   'load (directory-files "~/.emacsconfig/extension"       t "\\.el$"))
@@ -36,7 +36,8 @@
 ;;(mapc 'load (directory-files "~/.emacsconfig/eim/"            t "\\.el$"))
 ;;(mapc 'load (directory-files "~/.emacsconfig/slime"           t "\\.el$"))
 (mapc   'load (directory-files "~/.emacsconfig/my-own-config"   t "\\.el$"))
-(mapc   'load (directory-files "~/.emacsconfig/work"            t "\\.el$"))
 
 ;; ===========================================================================
 ;; configure ends here.
+
+(put 'ido-exit-minibuffer 'disabled nil)

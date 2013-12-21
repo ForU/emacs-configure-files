@@ -186,7 +186,7 @@
 (global-unset-key (kbd "C-x C-/"))
 
 
-;;================================================================
+;; ================================================================
 (require 'redo+)
 ;; from extension/redo.el (define-key global-map (kbd "C-/")  'undo)
 (define-key global-map (kbd "C-x C-_")  'redo)

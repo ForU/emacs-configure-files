@@ -1,0 +1,4 @@
+debian/follow-mouse.el usr/share/emacs/site-lisp/ecb/
+*.el usr/share/emacs/site-lisp/ecb/
+html-help/*.html usr/share/doc/ecb/html/
+ecb-images/ usr/share/emacs/site-lisp/ecb/

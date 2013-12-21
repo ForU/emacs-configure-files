@@ -2,43 +2,26 @@
 ;; f1 ;; global: moccor
 ;; f2 ;; global: jump
 ;; f3 ;; global: highlight-symbol
-;; f4 ;; C/C++: xcscope
-;;    ;; global: highlight line
-;;       (global-set-key (kbd "f4") 'global-hl-line-mode)
+;; f4 ;; C/C++: xcscope; ibus(maybe should be a toggle)
+(global-set-key [(f4)] 'ibus-mode)
 ;; f5 ;; C/C++:  compile
 ;; f6 ;; C/C++:  debug
 ;; f7 ;; global: reload-file
 ;; f8 ;; C/C++: find defined file
 (global-set-key [(f8)]          'find-file-at-point)
 ;; f9 ;; global: man
-(global-set-key [(f9)]          'woman)
+(global-set-key [(shift f9)]          'woman)
 (global-set-key [(control f9)]  'man)
 ;; view mode
-(global-set-key [(shift f9)]    'view-mode)
+(global-set-key [(f9)]    'view-mode)
  ;; f10;; global: linum
 (global-set-key [(f10)]         'global-linum-mode)
 (global-set-key [(control f10)] 'linum-mode)
 ;; (global-set-key [(f10)]         '(lambda() (interactive) (load-file "/usr/local/share/emacs/23.4/lisp/linum.el.gz")(global-linum-mode)))
 ;; (global-set-key [(control f10)] '(lambda() (interactive) (load-file "/usr/local/share/emacs/23.4/lisp/linum.el.gz")(linum-mode)))
 ;; f11;; global:
-;; 	f11: ../lib/lib.el : jump-to-buffer *tmp*
-;; 	control f11: full-screen, we don't need this in icewm
-;;  (global-set-key [(control f11)] 'full-screen)
-;; 
-;; f12;; global: calendar
-;; (global-set-key [(f12)] (lambda ()
-;; 			  (interactive)
-;; 			  (calendar)
-;; 			  (calendar-goto-today)))
-;; global: programconf/lib.el: (jump-to-term "c-term")
-
-;; ;;================================================================
-;; ;; windmove: easily move between windows
-;; ;; also can use M-window_num to move between windows.[window-numbering.el]
-;; (global-set-key [(control meta j)] 'windmove-down)
-;; (global-set-key [(control meta k)] 'windmove-up)
-;; (global-set-key [(control shift l)] 'windmove-right)
-;; (global-set-key [(control shift h)] 'windmove-left)
+;; 	f11: when ibus-mode on, control ibus
+;; f12: global: programconf/lib.el: (jump-to-term "c-term")
 
 ;; ================================================================
 ;; redo:

@@ -7,7 +7,6 @@
 ;; ================================================================
 ;; shell script mode
 (defun my-sh-mode-hook ()
-  (interactive)
   (make-local-variable 'skeleton-pair-alist)
   (setq skeleton-pair-alist  '(
 							   (?` ?` _ "''")
@@ -30,19 +29,60 @@
 (add-hook 'sh-mode-hook 'my-sh-mode-hook)
 
 ;; ================================================================
+;; js mode
+(defun my-js-mode-hook ()
+  (make-local-variable 'skeleton-pair-alist)
+  (setq skeleton-pair-alist  '(
+							   (?` ?` _ "''")
+							   (?\( _ ")")
+							   (?\[  _ " ]")
+							   ;;(?\< _ ">")
+                               (?{ \n > _ \n ?} >)
+							   (?\" _ "\"")))
+  (setq skeleton-pair t)
+  (local-set-key (kbd "(") 'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "{") 'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "'") 'skeleton-pair-insert-maybe)
+  ;;(local-set-key (kbd "<")   'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "[") 'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "\"") 'skeleton-pair-insert-maybe))
+
+(add-hook 'js-mode-hook 'my-js-mode-hook)
+
+;; ================================================================
 ;; python
 (defun my-python-mode-hook()
-  (interactive)
   (local-set-key (kbd "<f5>")
 				 (lambda ()
 				   (interactive)
 				   (local-set-key [(f5)] (jump-to-terminal "python-term")))))
+
+(defun my-python-mode-hook1 ()
+  (make-local-variable 'skeleton-pair-alist)
+  (setq skeleton-pair-alist  '(
+							   (?` ?` _ "''")
+							   (?\( _ ")")
+							   (?\[  _ "]")
+							   ;;(?\< _ ">")
+							   (?{ _ "}")
+							   (?\" _ "\"")))
+  (setq skeleton-pair t)
+  (local-set-key (kbd "(") 'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "{") 'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "'") 'skeleton-pair-insert-maybe)
+  ;;(local-set-key (kbd "<")   'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "[") 'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "<f5>")
+				 (lambda ()
+				   (interactive)
+				   (local-set-key [(f5)] (jump-to-terminal "shell-term")))))
 (add-hook 'python-mode-hook 'my-python-mode-hook)
+(add-hook 'python-mode-hook 'my-python-mode-hook1)
 
 ;; ================================================================
 ;; perl script mode
 (defun my-perl-mode-hook()
-  (interactive)
   ;; do something here
   (local-set-key (kbd "<f5>")
 				 (lambda ()
@@ -54,7 +94,6 @@
 ;; ================================================================
 ;; emacs lisp mode or lisp interaction mode
 (defun my-elisp-mode-hook ()
-  (interactive)
   (setq debug-on-error t)
   (make-local-variable 'skeleton-pair-alist)
   (setq skeleton-pair-alist  '(
@@ -62,7 +101,7 @@
 							   (?\( _ ")")
 							   (?\[  _ "]")
 							   (?\< _ ">")
-							   (?{ _ ?})			       
+							   (?{ _ ?})
 							   (?\" _ "\"")))
   (setq skeleton-pair t)
   (local-set-key (kbd "(") 'skeleton-pair-insert-maybe)
@@ -86,7 +125,6 @@
 
 ;; ================================================================
 (defun my-text-mode-hook ()
-  (interactive)
   (make-local-variable 'skeleton-pair-alist)
   (setq skeleton-pair-alist  '(
 							   (?` ?` _ "''")
@@ -103,13 +141,11 @@
   (local-set-key (kbd "[") 'skeleton-pair-insert-maybe)
   (local-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
 
-  ;; no text-mode-style indent
-  (custom-set-variables
-   ;; custom-set-variables was added by Custom.
-   ;; If you edit it by hand, you could mess it up, so be careful.
-   ;; Your init file should contain only one such instance.
-   ;; If there is more than one, they won't work right.
-   '(tab-stop-list (quote (4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120))))
+  ;; (local-set-key (kbd "<tab>")
+  ;;   (lambda ()
+  ;;     (interactive)
+  ;;     (if (string= "text-mode" major-mode)
+  ;;         (insert "    "))))
   )
 
 (dolist (hook (list
@@ -123,7 +159,6 @@
 ;; ================================================================
 ;; buffer menu mode:
 (defun my-buffer-menu-mode-hook()
-  (interactive)
   (hl-line-mode 1)
   ;; key binding
   (local-set-key (kbd "/") 'isearch-forward-regexp)
@@ -164,9 +199,24 @@
 
 (add-hook 'term-mode-hook 'multi-term-handle-close)
 
+(defun my-term-mode-hook ()
+  (make-local-variable 'skeleton-pair-alist)
+  (setq skeleton-pair-alist  '(
+							   (?` ?` _ "''")
+							   (?\( _ ")")
+							   (?\[  _ " ]")
+							   ;;(?\< _ ">")
+							   (?{ _ "}")
+							   (?\" _ "\"")))
+  (setq skeleton-pair t)
+  (local-set-key (kbd "(") 'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "{") 'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "'") 'skeleton-pair-insert-maybe)
+  ;;(local-set-key (kbd "<")   'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "[") 'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
 
-(defun my-term-mode-keys()
-  "rebinding some key for term mode"
+  ;; keybindings
   ;; highlight-symbol
   (local-unset-key "\M-n")
   (local-unset-key "\M-p")
@@ -177,7 +227,8 @@
   (local-set-key [(f8)]         'term-char-mode)
   (local-set-key [(control f8)] 'term-line-mode) ;does not work
   )
-(add-hook 'term-mode-hook 'my-term-mode-keys)
+
+(add-hook 'term-mode-hook 'my-term-mode-hook)
 ;; ================================================================
 ;; w3m
 (defun my-w3m-mode-hook()
@@ -206,14 +257,58 @@
   (define-key view-mode-map "0" 'move-beginning-of-line)
   (define-key view-mode-map "9" 'move-end-of-line)
   ;; page
-  (define-key view-mode-map " " 'forward-page)
+  (define-key view-mode-map " " 'scroll-up-command)
   ;; char
-  (define-key view-mode-map "l" 'forward-char)
-  (local-unset-key "h")
   (define-key view-mode-map "h" 'backward-char)
+  (define-key view-mode-map "l" 'forward-char)
   ;; word
   (define-key view-mode-map "w" 'forward-word)
   (define-key view-mode-map "b" 'backward-word)
+  ;; bind 'view-quit' to toggle:view-mode
+  (define-key view-mode-map "q" 'view-mode)
+  (define-key view-mode-map "i" 'view-mode)
+
+  ;; cscope for c-mode
+  (define-key view-mode-map "d"
+    (lambda ()
+      (interactive)
+      (if (or(string= "c++-mode" major-mode)
+             (string= "c-mode" major-mode))
+          (cscope-find-global-definition-no-prompting))))
+  ;; symbol
+  (define-key view-mode-map "s"
+    (lambda ()
+      (interactive)
+      (if (or(string= "c++-mode" major-mode)
+             (string= "c-mode" major-mode))
+          (cscope-find-this-symbol (thing-at-point 'symbol)))))
+  ;; text string
+  (define-key view-mode-map "t"
+    (lambda ()
+      (interactive)
+      (if (or(string= "c++-mode" major-mode)
+             (string= "c-mode" major-mode))
+          (cscope-find-this-text-string (thing-at-point 'symbol)))))
+  ;; calling function
+  (define-key view-mode-map "c"
+    (lambda ()
+      (interactive)
+      (if (or (string= "c++-mode" major-mode)
+              string= "c-mode" major-mode)
+          (cscope-find-functions-calling-this-function (thing-at-point 'symbol))
+        (View-leave)                    ;default view mode binding
+        )))
+  ;; called function
+  (define-key view-mode-map "C"
+    (lambda ()
+      (interactive)
+      (if ((or(string= "c++-mode" major-mode)
+              string= "c-mode" major-mode))
+          (cscope-find-called-functions (thing-at-point 'symbol)))))
+
+  (define-key view-mode-map "p" 'highlight-symbol-prev)
+  (define-key view-mode-map "n" 'highlight-symbol-next)
+  ;; to add for view-mode
   )
 
 (add-hook 'view-mode-hook 'my-view-mode-hook)
@@ -226,6 +321,81 @@
 
 (add-hook 'nxml-mode-hook 'my-nxml-mode-hook)
 
+;; ================================================================
+;; latex
+(defun my-latex-mode-hook ()
+  (auto-complete-mode 1)
+  (local-set-key (kbd "<f5>")
+                 (lambda()
+                   (interactive)
+                   (compile (concat "pdflatex " (buffer-name))))))
+(add-hook 'latex-mode-hook 'my-latex-mode-hook)
+
+;; ================================================================
+;; man
+(defun my-man-mode-hook ()
+  (local-set-key "j" 'next-line)
+  (local-set-key "k" 'previous-line)
+  )
+(add-hook 'Man-mode-hook 'my-man-mode-hook)
+
+;; ================================================================
+;; doc-view mode
+(defun my-doc-view-mode-hook()
+  (setq doc-view-continuous t)
+  (local-set-key "j" 'next-line)
+  (local-set-key "k" 'previous-line)
+  (local-set-key "l" 'next-char)
+  (local-set-key "h" 'previous-char)
+  (local-set-key "=" 'doc-view-enlarge)
+  ;; H - fit hight
+  ;; P - fit page
+  ;; W - fit width
+  ;; < - begin of buffer
+  ;; > - end of buffer
+  )
+(add-hook 'doc-view-mode-hook 'my-doc-view-mode-hook)
+
+;; find file hook configure
+(defun my-find-file-hook ()
+  ;; automatically toggle view-mode for read only file
+  (if buffer-read-only
+      (progn
+        (view-mode)
+        (message "buffer read only"))))
+
+(add-hook 'find-file-hook 'my-find-file-hook)
+;; ================================================================
+(defun my-compilation-mode-hook()
+  ;; always stays at the end to scroll for output
+  (end-of-buffer)
+  (local-set-key (kbd "r")
+                 (lambda()
+                   (interactive)
+                   (compile compile-command)))
+  (local-set-key "n" 'next-error)
+  (local-set-key "p" 'previous-error)
+  (local-set-key "\C-\M-n" 'next-error)
+  (local-set-key "\C-\M-p" 'previous-error)
+  )
+(add-hook 'compilation-mode-hook 'my-compilation-mode-hook)
+
+
+;; ================================================================
+(defun my-dired-mode-hook()
+  (dired-omit-mode 1)
+  (local-set-key [(f8)]
+                 (lambda()
+                   (interactive)
+                   (dired-omit-mode 0)))
+  (local-set-key [(control f8)]
+                 (lambda()
+                   (interactive)
+                   (dired-omit-mode 1))))
+
+(require 'dired-x)
+(setq dired-omit-files "^\\...+$")
+(add-hook 'dired-mode-hook 'my-dired-mode-hook)
 ;; ================================================================
 ;; end here.
 ;; 2012-04-20 10:30:39 li_kui

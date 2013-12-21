@@ -1,0 +1,8 @@
+all package is put in the ~/.emacs.d, and load before my own configure or directory.
+make each dir in this dir be separate form each other, myconfig and program
+load all the package file before my own configure.
+
+
+how to extension this configure:
+	put all need-add-to-load-path extension in the ~/.emacs.d/plugins/extension,
+	and others in ~/.emacsconfig/extension.

@@ -1,21 +1,12 @@
 ;; url: http://cnsnap.cn.freebsd.org/doc/zh_CN.GB2312/books/developers-handbook/emacs.html
 ;; Wed Apr 20 21:45:41 2011
-;;================================================================
-;; FRINGE CONFIGURE
-;;
-
 (defun my-fringe-small()
   "toggle the fringe manually"
   (interactive)
-  ;(fringe-mode '(8 . 1))
-  (setq-default
-   indicate-empty-lines t
-   indicate-buffer-boundaries '((t . left) (nil . right))))
+  (fringe-mode '(8 . 0)))
 
-;;================================================================
 (if (window-system)
     (progn
-	  ;; fringe init
 	  (my-fringe-small)
       ;; http://ubuntuforums.org/showthread.php?t=1530333&highlight=emacs
       (setq-default frame-title-format
@@ -36,38 +27,35 @@
 								"")))))
       (setq x-select-enable-clipboard  t)
 	  ;; SESSION
-	  (if (or (equal (getenv "DESKTOP_SESSION") "IceWM")
-			  (equal (getenv "DESKTOP_SESSION") "icewm-session"))
+	  (if (or(equal (getenv "DESKTOP_SESSION") "icewm")
+             (equal (getenv "DESKTOP_SESSION") "IceWM")
+             (equal (getenv "DESKTOP_SESSION") "icewm-session"))
 		  (progn
 			(tool-bar-mode 0)
-			(scroll-bar-mode 0)
 			(menu-bar-mode 0)
+			;; (scroll-bar-mode 0)
+            ;; (set-default-font "monaco-11")
 			))
 	  (if (or (equal (getenv "DESKTOP_SESSION") "gnome")
 			  (equal (getenv "DESKTOP_SESSION") "gnome-classic")
-			  (equal (getenv "DESKTOP_SESSION") "default"))
+			  (equal (getenv "DESKTOP_SESSION") "ubuntu"))
 		  (progn
-			(maximize-screen)
-			(scroll-bar-mode 0)
-			(full-screen)
-			(set-default-font "lucida console-10")
-		        (color-theme-twilight)
-			))
-	  (if (equal (getenv "DESKTOP_SESSION") "awesome")
-		  (progn
-			(tool-bar-mode 0)
-			(menu-bar-mode 0)
-			(scroll-bar-mode 0)
-			(my-large-frame)
-			(my-font-set "proggy-bp")
-			))
+			;; (scroll-bar-mode 0)
+            (menu-bar-mode 0)
+            (tool-bar-mode 0)
+			(my-fringe-small)
+			)
+		)
+	  ;; else, none of above
+	  ;; (scroll-bar-mode 0)
+	  (menu-bar-mode 0)
+	  (tool-bar-mode 0)
+	  (my-fringe-small)
 	  )
   ;; ================================================================
   ;; else, terminal
-  (color-theme-twilight)
   (menu-bar-mode 0)
   (xterm-mouse-mode 1))
-
 ;; ================================================================
 ;; end here.
 ;; 2012-05-16 xiangshou24@gmail.com

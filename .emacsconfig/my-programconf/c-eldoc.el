@@ -24,7 +24,7 @@
 ;;; Commentary:
 
 ;; To enable: put the following in your .emacs file:
-;; 
+;;
 ;; (add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
 
 ;; Nathaniel has submitted a caching patch to make this workable on large projects "like the emacs
@@ -102,13 +102,13 @@ to the created hash table."
                   (funcall (cadddr cache) val)
                   nil)
               val)))))
-   
+
   (defun cache-puthash (key val cache)
     "Puts the key-val pair into cache."
     (puthash key
              (cons val (funcall (cadr cache)))
              (car cache))))
-         
+
 
 ;; if you've got a non-GNU preprocessor with funny options, set these
 ;; variables to fix it
@@ -160,7 +160,7 @@ T1 and T2 are time values (as returned by `current-time' for example)."
 ;; to get normal function declarations
 (defun c-eldoc-get-buffer (function-name)
   "Call the preprocessor on the current file"
-;; run the first time for macros
+  ;; run the first time for macros
   (let ((output-buffer (cache-gethash (current-buffer) c-eldoc-buffers)))
     (if output-buffer output-buffer
       (let* ((this-name (concat "*" buffer-file-name "-preprocessed*"))
@@ -235,7 +235,7 @@ T1 and T2 are time values (as returned by `current-time' for example)."
       arguments)))
 
 (defun c-eldoc-print-current-symbol-info ()
-  "Returns documentation string for the current symbol." 
+  "Returns documentation string for the current symbol."
   (let* ((current-function-cons (c-eldoc-function-and-argument (- (point) 1000)))
          (current-function (car current-function-cons))
          (current-function-regexp (concat "[ \t\n]+[*]*" current-function "[ \t\n]*("))

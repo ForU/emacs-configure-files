@@ -1,4 +1,34 @@
-;; ================================================================
+;; some utils
+(defun buffer-exists (buf-name) (get-buffer buf-name))
+
+(defun buffer-window-visible (buf)
+  (get-buffer-window buf) )
+
+(defun goto-or-create-window (buf)
+  (if (buffer-window-visible buf)
+      (progn
+        (message "%s visible" buf)
+        (pop-to-buffer buf))
+    (split-window) (other-window 1)
+    (switch-to-buffer buf)))
+
+;; used for any buffer (including *term* buffer if exists, or
+;; a *term* buffer is created with fundamental mode on )
+(defun jump-to-buffer(buf-name)
+  "go to buffer if it exists, otherwise generate a new buffer"
+  (interactive)
+  (if (buffer-exists buf-name)
+      (pop-to-buffer buf-name)
+    (pop-to-buffer (generate-new-buffer buf-name))))
+
+;; work wrong 
+(defun delete-compilation-window()
+  (setq compilation-buffer "*compilation*")
+  (if (buffer-window-visible compilation-buffer)
+      (progn
+        (message "%s visible" compilation-buffer)
+        (delete-window (get-buffer-window compilation-buffer)))))
+
 ;; useful when your file changes after "svn update" or other program
 ;; change the file's disk content
 (defun reload-file()
@@ -9,76 +39,6 @@
 
 ;; TODO: diff-file
 
-;; used for any buffer (including *term* buffer if exists, or
-;; a *term* buffer is created with fundamental mode on )
-(defun buffer-exists (buf-name) (get-buffer buf-name))
-(defun jump-to-buffer(buf-name)
-  "go to buffer if it exists, otherwise generate a new buffer"
-  (interactive)
-  (if (buffer-exists buf-name)
-      (pop-to-buffer buf-name)
-    (pop-to-buffer (generate-new-buffer buf-name))))
-
-;; ================================================================
-
-;; ================================================================
-;; ;; works version, but functions limited
-;; (defun write-buffer-substring-to-file(file-name buf-name start end &optional header-type)
-;;   "write @param:buffer(named buf-name)'s substring marked by @start by
-;;  @end to file named @param:file-name, and if buf-name is not yet exists,
-;; then just create a new @buf-name buffer and return"
-;;   ;; TODO:  1. argv check [1] file named file-name exists,
-;;   ;;                      [2] start > end
-;;   ;; 		2. start end to be &optional
-;;   (let((file-buf-name (file-name-nondirectory file-name)))
-;; 	(if (buffer-exists buf-name)
-;; 		(if (buffer-exists file-buf-name)
-;; 			(progn
-;; 			  (set-buffer file-buf-name)
-;; 			  (goto-char (point-max))	;append
-;; 			  (newline)
-;; 			  (if (string= header-type "1")			;1-level header
-;; 				  (insert note-header))
-;; 			  (if (string= header-type "2")			;2-level header
-;; 				  (insert note-sub-header))
-;; 			  (if (string= header-type "3")			;3-level header
-;; 				  (insert note-sub-header))
-;; 			  (insert-buffer-substring-no-properties buf-name start end)
-;; 			  (save-buffer (buffer-name)))
-;; 		  ;; else, file buf not exists
-;; 		  (find-file file-name)
-;; 		  (write-buffer-substring-to-file file-name buf-name start end))
-;; 	  ;; else, buf:[buf-name] not exists
-;; 	  (jump-to-buffer buf-name))))
-;; 
-;; (global-set-key [(control shift f11)]
-;; 				(lambda()
-;; 				  (interactive)
-;; 				  (write-region-to-file "~/__note__.outline" (buffer-name) "3")))
-;; ;; note with header 3
-;; (global-set-key [(f11)]
-;; 				(lambda()
-;; 				  "write region to file"
-;; 				  (interactive)
-;; 				  (write-region-to-file "~/__note__.outline" (buffer-name) "0")))
-;; ;; note with header 2
-;; (global-set-key [(control f11)]
-;; 				(lambda()
-;; 				  "write whole buffer to file"
-;; 				  (interactive)
-;; 				  (write-region-to-file "~/__note__.outline" (buffer-name) "1")))
-;; ;; note with header 1
-;; (global-set-key [(shift f11)]
-;; 				(lambda()
-;; 				  (interactive)
-;; 				  (write-region-to-file "~/__note__.outline" (buffer-name) "2")))
-;; (global-set-key [(control shift f11)]
-;; 				(lambda()
-;; 				  (interactive)
-;; 				  (write-region-to-file "~/__note__.outline" (buffer-name) "3")))
-;; ================================================================
-
-;; ================================================================
 (require 'term)
 (defun jump-to-terminal (term-buf-name)
   "If the current buffer is:
@@ -117,19 +77,6 @@
         (ansi-term term-cmd term-buf-name)))))
 
 
-(global-set-key (kbd "<f12>")
-				(lambda() (interactive)
-				  (jump-to-terminal "c-term")))
-(global-set-key [(control f12)]
-				(lambda() (interactive)
-				  (jump-to-terminal "TS232")))
-(global-set-key [(shift f12)]
-				(lambda() (interactive)
-				  (jump-to-terminal "264")))
-(global-set-key [(control shift f12)]
-				(lambda() (interactive)
-				  (jump-to-terminal "mysql@264")))
-
 ;; ================================================================
 ;; cua-mode, since cua-mode has no hook, then we define a keybinding here
 ;;
@@ -151,6 +98,26 @@
   (interactive)
   (setq cua-enable-cua-keys nil)
   (cua-mode))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(global-set-key (kbd "<f12>")
+				(lambda() (interactive)
+				  (jump-to-terminal "term1")))
+(global-set-key [(control f12)]
+				(lambda() (interactive)
+				  (jump-to-terminal "term2")))
+(global-set-key [(shift f12)]
+				(lambda() (interactive)
+				  (jump-to-terminal "term3")))
+(global-set-key [(control shift f12)]
+				(lambda() (interactive)
+				  (jump-to-terminal "term4")))
+
+
+(defun mm()
+  (interactive)
+  (message "%s" major-mode))
 
 (provide 'lib)
 ;; ================================================================

@@ -13,7 +13,7 @@
 (defvar note-outline-sub-header-3 "*** " "the 3-level header of outline mode")
 
 ;; default
-(defcustom default-note-file "~/note"
+(defcustom default-note-file "~/Documents/emacs/note.org"
   "the default note file"
   :type 'string
   :group 'initialize)

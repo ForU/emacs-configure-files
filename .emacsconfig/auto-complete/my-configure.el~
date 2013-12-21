@@ -32,7 +32,7 @@
 
 (define-key ac-complete-mode-map "l" 'ac-stop)
 ;; (define-key ac-complete-mode-map " " 'ac-expand)
-(define-key ac-complete-mode-map "\t" 'ac-expand)
+;; (define-key ac-complete-mode-map "\t" 'ac-expand)
 (define-key ac-complete-mode-map " " 'ac-complete)
 ;; notice:   This can move much quicker only when ac-auto-start is
 ;;           nil. Otherwise this could be a barrier.

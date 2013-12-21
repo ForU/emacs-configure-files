@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	dh_auto_build
+	make online-help
+
+override_dh_install:
+	dh_install
+	find debian/ecb/usr/share/emacs/site-lisp/ecb -type f -exec chmod 644 {} +

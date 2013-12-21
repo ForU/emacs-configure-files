@@ -1,14 +1,3 @@
 ;; ;essential configure:
-(add-to-list 'load-path  "/home/lk/.emacs.d/plugins/emacs-w3m/")
-(require 'w3m-load)
-
-;; ;to handle text/html part with emacs-w3m under SEMI MUAs such as T-gnus and Wanderlust
-;; ;(require 'mime-w3m)
-
-;; (setq browse-url-browser-function 'w3m-browse-url)
-;;  (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
-;;  ;; optional keyboard short-cut
-;;  (global-set-key "\C-xm" 'browse-url-at-point)
-;; (setq w3m-use-cookies t)
-
-
+(add-to-list 'load-path  "~/.emacs.d/plugins/emacs-w3m/")
+(require 'w3m)

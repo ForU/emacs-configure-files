@@ -24,7 +24,7 @@
 ;; GNU Emacs; see the file COPYING.  If not, write to the Free Software
 ;; Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
-;; $Id: ecb-mode-line.el,v 1.40 2009/05/15 16:40:05 berndl Exp $
+;; $Id: ecb-mode-line.el,v 1.42 2010/02/23 16:09:06 berndl Exp $
 
 ;;; Commentary:
 ;;
@@ -309,8 +309,8 @@ as \"W-<number>\"."
                       (not no-win-nr))
                  ;; With :eval we must not use a list
                  '(:eval (car (ecb-mode-line-make-modeline-str
-                               (format " W-%d"
-                                       (1- (ecb-window-in-window-list-number (ecb-canonical-windows-list))))
+                               (format "%d"
+                                       (+ 1(1- (ecb-window-in-window-list-number (ecb-canonical-windows-list)))))
                                ecb-mode-line-win-nr-face)))
                "")
              (ecb-mode-line-make-modeline-str shown-prefix
@@ -325,9 +325,8 @@ as \"W-<number>\"."
 
 (defun ecb-mode-line-update-buffer (buffer-name new-mode-line-format)
   "Update the given buffer...."
-  (if (get-buffer buffer-name)
-      (save-excursion
-        (set-buffer buffer-name)
+  (if (ecb-buffer-obj buffer-name)
+      (with-current-buffer buffer-name
         (setq mode-line-format new-mode-line-format)
         (if ecb-running-xemacs
             (redraw-modeline)

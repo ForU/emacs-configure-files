@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: flushleft
+# key: flushleft
+# binding: direct-keybinding
+# expand-env: ((some-var some-value))
+# type: command
+# --
+\begin {flushleft}
+$0
+\end {flushleft}

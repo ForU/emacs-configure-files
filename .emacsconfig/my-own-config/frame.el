@@ -11,12 +11,12 @@
 (defun my-default-frame()
   "default frame size!"
   (interactive)
-  (my-arrange-frame 80 55 620 15))
+  (my-arrange-frame 80 40 80 40))
 
 (defun my-large-frame()
   "large frame size!"
   (interactive)
-  (my-arrange-frame 159 59 0 0))
+  (my-arrange-frame 140 45 200 50))
 
 ;;================================================================
 ;; code ends here

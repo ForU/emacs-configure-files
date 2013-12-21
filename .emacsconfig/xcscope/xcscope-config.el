@@ -25,10 +25,19 @@
   (define-key cscope-list-entry-keymap "t"   'cscope-find-this-text-string)
   (define-key cscope-list-entry-keymap "o"   'cscope-select-entry-other-window)
   (define-key cscope-list-entry-keymap "RET" 'cscope-select-entry-other-window)
+  ;; file
   (define-key cscope-list-entry-keymap "h"   'cscope-next-file)
   (define-key cscope-list-entry-keymap "l"   'cscope-prev-file)
+  ;; self-view, without toggle c-stuff
+  (define-key cscope-list-entry-keymap "H"   'backward-paragraph)
+  (define-key cscope-list-entry-keymap "L"   'forward-paragraph)
+  ;; hide away
+  (define-key cscope-list-entry-keymap "0"   'delete-window)
+  (define-key cscope-list-entry-keymap "q"   'delete-window)
+  ;; file
   (define-key cscope-list-entry-keymap "n"   'cscope-next-file)
   (define-key cscope-list-entry-keymap "p"   'cscope-prev-file)
+  ;; symbol
   (define-key cscope-list-entry-keymap "j"   'cscope-next-symbol)
   (define-key cscope-list-entry-keymap "k"   'cscope-prev-symbol)
   )

@@ -177,7 +177,7 @@
 
 (require 'minimap)
 
- ================================================================
+;;================================================================
 (require 'session)
 (add-hook 'after-init-hook 'session-initialize)
 (load "desktop")
@@ -187,9 +187,9 @@
 
 
 ;;================================================================
-(require 'redo+)
+;; (require 'redo+)
 ;; from extension/redo.el (define-key global-map (kbd "C-/")  'undo)
-(define-key global-map (kbd "C-x C-_")  'redo)
+;; (define-key global-map (kbd "C-x C-_")  'redo)
 
 ;; ================================================================
 ;; end here.

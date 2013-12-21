@@ -33,5 +33,9 @@
 ;; Sat Apr 14 12:09:49 2012
 
 
+(defun scroll-bar-left()
+  (interactive)
+  (set-scroll-bar-mode 'left))
+
 ;;================================================================
 ;;code ends here.

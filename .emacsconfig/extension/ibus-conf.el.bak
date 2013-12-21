@@ -1,0 +1,8 @@
+;; ================================================================
+;; http://www.emacswiki.org/emacs/IBusMode
+;; ibus-mode
+(require 'ibus)
+;;(add-hook 'after-init-hook 'ibus-mode-on)
+(setq ibus-enable-specified-engine "pinyin")
+(ibus-define-common-key ?\S-\s nil)
+(global-set-key (kbd "S-SPC") 'ibus-toggle)

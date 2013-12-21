@@ -3,7 +3,7 @@
 (defun ascii-table ()
   "Print the ascii table. Based on a defun by Alex Schroeder <asc@bsiag.com>"
   (interactive)
-  (switch-to-buffer "*ASCII*")
+  (pop-to-buffer "*ASCII*")
   (erase-buffer)
   (insert (format "ASCII characters up to number %d.\n" 254))
   (let ((i 0) (sep "======================="))

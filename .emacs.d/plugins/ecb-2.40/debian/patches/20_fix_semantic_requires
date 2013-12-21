@@ -1,0 +1,15 @@
+Index: ecb/ecb-semantic-wrapper.el
+===================================================================
+--- ecb.orig/ecb-semantic-wrapper.el	2011-06-08 16:03:27.000000000 -0400
++++ ecb/ecb-semantic-wrapper.el	2011-06-08 16:03:35.000000000 -0400
+@@ -38,8 +38,8 @@
+ 
+ 
+ (require 'semantic)
+-(require 'semantic-ctxt)
+-(require 'semantic-analyze)
++(require 'semantic/ctxt)
++(require 'semantic/analyze)
+ 
+ (defconst ecb-semantic-2-loaded (string-match "^2" semantic-version))
+ (defconst ecb-semantic-2-beta-nr (if (and ecb-semantic-2-loaded
