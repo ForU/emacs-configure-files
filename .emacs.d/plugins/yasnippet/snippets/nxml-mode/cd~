@@ -1,4 +1,0 @@
-          <item parse_method="curl_download" input="search_url" value_type="string">
-            <url use_input="1">search_url</url>
-            <sleep>3</sleep>
-          </item>

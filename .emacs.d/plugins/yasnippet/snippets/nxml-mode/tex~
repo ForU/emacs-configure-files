@@ -1,4 +1,0 @@
-          <item parse_method="text_exist" input="page_buffer" value_type="removed">
-            <text>The page you were looking for doesn't exist</text>
-            <message>page not exist </message>
-          </item>

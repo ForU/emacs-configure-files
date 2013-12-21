@@ -1,3 +1,0 @@
-<item parse_method="from_format" input="$1" value_type="string">
-  <format>$0</format>
-</item>

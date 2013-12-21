@@ -1,3 +1,0 @@
-          <item parse_method="from_time" input="air_date" value_type="formatted_time">
-            <strptime_format>%m/%d/%Y</strptime_format>
-          </item>

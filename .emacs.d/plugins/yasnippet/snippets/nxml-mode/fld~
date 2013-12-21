@@ -1,6 +1,0 @@
-<field name="$0">
- <item field_parse_method="" input="" value_type="string">
-  <xpath>$1</xpath>
-  <regex></regex>
- </item>
-</field>

@@ -1,4 +1,0 @@
-        <item parse_method="regex_matched" input="clip_url" value_type="string">
-          <regex>(?:^http://|^)www\.hulu\.com/watch/[0-9]+</regex>
-          <value>0</value>
-        </item>
