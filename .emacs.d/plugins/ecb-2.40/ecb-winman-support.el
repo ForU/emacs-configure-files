@@ -276,20 +276,20 @@ window-configuration gets always the name `ecb-winman-winring-name'."
 ecb-frame. This advice is a permanent advice set!"
   t)
 
-(defecb-advice winner-mode before ecb-winman-not-supported-function-advices
-  "Prevents `winner-mode' from being activated for the ECB-frame."
-  (if (equal (selected-frame) ecb-frame)
-      (ecb-error "Can't use winner-mode functions in the ecb-frame.")))
+;; (defecb-advice winner-mode before ecb-winman-not-supported-function-advices
+;;   "Prevents `winner-mode' from being activated for the ECB-frame."
+;;   (if (equal (selected-frame) ecb-frame)
+;;       (ecb-error "Can't use winner-mode functions in the ecb-frame.")))
 
-(defecb-advice winner-redo before ecb-winman-not-supported-function-advices
-  "Prevents `winner-redo' from being used within the ECB-frame."
-  (if (equal (selected-frame) ecb-frame)
-      (ecb-error "Can't use winner-mode functions in the ecb-frame.")))
+;; (defecb-advice winner-redo before ecb-winman-not-supported-function-advices
+;;   "Prevents `winner-redo' from being used within the ECB-frame."
+;;   (if (equal (selected-frame) ecb-frame)
+;;       (ecb-error "Can't use winner-mode functions in the ecb-frame.")))
 
-(defecb-advice winner-undo before ecb-winman-not-supported-function-advices
-  "Prevents `winner-undo' from being used within the ECB-frame."
-  (if (equal (selected-frame) ecb-frame)
-      (ecb-error "Can't use winner-mode functions in the ecb-frame.")))
+;; (defecb-advice winner-undo before ecb-winman-not-supported-function-advices
+;;   "Prevents `winner-undo' from being used within the ECB-frame."
+;;   (if (equal (selected-frame) ecb-frame)
+;;       (ecb-error "Can't use winner-mode functions in the ecb-frame.")))
 
 (when-ecb-running-xemacs
   (defecb-advice push-window-configuration before ecb-winman-not-supported-function-advices
