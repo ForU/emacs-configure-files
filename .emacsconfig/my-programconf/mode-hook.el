@@ -317,6 +317,7 @@
   (define-key view-mode-map "p" 'highlight-symbol-prev)
   (define-key view-mode-map "n" 'highlight-symbol-next)
   ;; to add for view-mode
+  (define-key view-mode-map "\C-k" 'View-scroll-line-backward)
   )
 
 (add-hook 'view-mode-hook 'my-view-mode-hook)

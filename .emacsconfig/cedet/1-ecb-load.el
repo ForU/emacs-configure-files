@@ -131,7 +131,7 @@ little more place."
 	   ecb-layout-name "code"
        ecb-auto-expand-tag-tree t
        ecb-auto-expand-tag-tree-old t
-       ecb-compile-window-height 10     ;show compile window if needed
+       ;; ecb-compile-window-height 10     ;show compile window if needed
        ecb-compile-window-width 'frame ;;'frame(default) or 'edit-window
        )
 
