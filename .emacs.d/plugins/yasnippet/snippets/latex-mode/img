@@ -1,4 +1,5 @@
-\begin{figure}[ht!]
+% \usepackage{float}
+\begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth,height=80mm]{$1.png}
   \caption{$0}

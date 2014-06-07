@@ -1,8 +1,16 @@
 ;; ================================================================
-;; (add-hook 'text-mode-hook 'flyspell-mode)
-;; (add-hook 'text-mode-hook 'turn-on-auto-fill)
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
+(add-hook 'LaTeX-mode-hook 'reftex-mode)
 (add-hook 'diary-hook 'appt-make-list)
+
+(defun my-LaTeX-mode-hook()
+  (auto-fill-mode 0)
+  (auto-complete-mode 1)
+  (local-set-key (kbd "<f5>") 'compile)
+)
+(add-hook 'LaTeX-mode-hook 'my-LaTeX-mode-hook)
 
 ;; ================================================================
 ;; shell script mode
@@ -348,6 +356,9 @@
   (local-set-key "l" 'next-char)
   (local-set-key "h" 'previous-char)
   (local-set-key "=" 'doc-view-enlarge)
+  (local-set-key "-" 'doc-view-shrink)
+  (local-set-key "r" 'reload-file)
+
   ;; H - fit hight
   ;; P - fit page
   ;; W - fit width
@@ -396,6 +407,7 @@
 (require 'dired-x)
 (setq dired-omit-files "^\\...+$")
 (add-hook 'dired-mode-hook 'my-dired-mode-hook)
+
 ;; ================================================================
 ;; end here.
 ;; 2012-04-20 10:30:39 li_kui

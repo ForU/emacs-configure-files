@@ -7,19 +7,19 @@
 (require 'ecb)
 
 ;; ////////////////////////////////////////////////////////////////
-;; refer to ~/.emacs.d/plugins/ecb-2.40/ecb-layout-defs.el 
+;; refer to ~/.emacs.d/plugins/ecb-2.40/ecb-layout-defs.el
 (ecb-layout-define "none" left
   ;;(select-window (selected-window))
   (delete-window (selected-window))
   (message "none")
- )
+  )
 
 (ecb-layout-define "simple" left
   (select-window (selected-window))
   (ecb-set-methods-buffer)
   (select-window (next-window)))
 
-(ecb-layout-define "mix" left-right
+(ecb-layout-define "full" left-right
   "This function creates the following layout:
    --------------------------------------------------------------
    |              |                               |             |
@@ -44,8 +44,8 @@ little more place."
   (ecb-set-directories-buffer)
   (ecb-split-ver 0.4)
   (ecb-set-sources-buffer)
-  ;;(ecb-split-ver 0.5)
-  ;;(ecb-set-history-buffer)
+  (ecb-split-ver 0.5)
+  (ecb-set-history-buffer)
   (select-window (next-window (next-window)))
   (ecb-set-methods-buffer)
   (select-window (previous-window (selected-window) 0)))
@@ -54,7 +54,7 @@ little more place."
 (set-default 'ecb-windows-width 0.25)
 
 (ecb-layout-define "code" left-right
- "This function creates the following layout:
+  "This function creates the following layout:
 
    --------------------------------------------------------------
    |              |                               |             |
@@ -81,14 +81,47 @@ little more place."
 If you have not set a compilation-window in `ecb-compile-window-height' then
 the layout contains no persistent compilation window and the other windows get a
 little more place."
- (ecb-set-directories-buffer)
- (ecb-split-ver 0.4)
- (ecb-set-sources-buffer)
- (select-window (next-window (next-window)))
- (ecb-set-methods-buffer)
- ;; (ecb-split-ver 0.9)
- ;; (ecb-set-history-buffer)
- (select-window (previous-window (previous-window (selected-window) 0) 0)))
+  (ecb-set-directories-buffer)
+  (ecb-split-ver 0.4)
+  (ecb-set-sources-buffer)
+  (select-window (next-window (next-window)))
+  (ecb-set-methods-buffer)
+  ;; (ecb-split-ver 0.9)
+  ;; (ecb-set-history-buffer)
+  (select-window (previous-window (previous-window (selected-window) 0) 0)))
+
+(ecb-layout-define "editor" left
+  "This function creates the following layout:
+
+   --------------------------------------------------------------
+   |              |                                             |
+   |  Directories |                                             |
+   |              |                                             |
+   |              |                                             |
+   |              |                                             |
+   |              |                                             |
+   |              |                                             |
+   |--------------|             Edit                            |
+   |              |                                             |
+   |  Sources     |                                             |
+   |              |                                             |
+   |              |                                             |
+   |              |                                             |
+   |              |                                             |
+   |              |                                             |
+   --------------------------------------------------------------
+   |                                                            |
+   |                    Compilation                             |
+   |                                                            |
+   --------------------------------------------------------------
+
+If you have not set a compilation-window in `ecb-compile-window-height' then
+the layout contains no persistent compilation window and the other windows get a
+little more place."
+  (ecb-set-directories-buffer)
+  (ecb-split-ver 0.4)
+  (ecb-set-sources-buffer)
+  (select-window (previous-window (previous-window (selected-window) 0) 0)))
 
 ;; ////////////////////////////////////////////////////////////////
 ;; basic configure
