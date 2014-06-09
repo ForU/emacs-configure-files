@@ -95,7 +95,7 @@ little more place."
 ;; to enable ecb compilation window, just set ecb-compile-window-height
 (setq  stack-trace-on-error t
 	   ecb-tip-of-the-day nil
-	   ecb-layout-name "code"
+	   ecb-layout-name "simple"
        ecb-auto-expand-tag-tree t
        ecb-auto-expand-tag-tree-old t
        ;; ecb-compile-window-height 10     ;show compile window if needed

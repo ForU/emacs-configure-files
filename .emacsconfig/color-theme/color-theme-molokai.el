@@ -113,6 +113,7 @@
      (woman-italic ((t (:foreground "#A6E22E"))))
      (woman-unknown ((t (:foreground "#66D9EF"))))
      (linum ((t: (:foreground "#465457" :background "#232526" ))))
+     (semantic-highlight-edits-mode ((t: (:background "#1B1D1E"))))
      ))
   (term-color-for-molokai)
   )

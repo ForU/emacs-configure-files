@@ -8,15 +8,15 @@
 
 (defun my-c-mode-auto-pair ()
   (interactive)
-  (make-local-variable 'skeleton-pair-alist) 
+  (make-local-variable 'skeleton-pair-alist)
   (setq skeleton-pair-alist  '(
-			       (?` ?` _ "''")
-			       (?\( ?  _ " )") 
-			       (?\"? _"\"")
-			       (?\'? _"'")
-			       (?\[ ?  _ " ]")
-			       (?\<?  _ " >") 
-			       (?{ \n > _ \n ?} >)))
+                               (?` ?` _ "''")
+                               (?\( ?  _ " )")
+                               (?\"? _"\"")
+                               (?\'? _"'")
+                               (?\[ ?  _ " ]")
+                               (?\<?  _ " >")
+                               (?{ \n > _ \n ?} >)))
   (setq skeleton-pair t)
   (local-set-key (kbd "(")   'skeleton-pair-insert-maybe)
   (local-set-key (kbd "{")   'skeleton-pair-insert-maybe)
@@ -24,87 +24,87 @@
   (local-set-key (kbd "<")   'skeleton-pair-insert-maybe)
   (local-set-key (kbd "\"")  'skeleton-pair-insert-maybe)
   (local-set-key (kbd "'")  'skeleton-pair-insert-maybe)
-;  (local-set-key (kbd "'")   '(lambda ()
-;				(interactive)
-;				(skeleton-pair-insert-maybe)
-;				(delete-backward-char)))
+  ;;  (local-set-key (kbd "'")   '(lambda ()
+  ;;				(interactive)
+  ;;				(skeleton-pair-insert-maybe)
+  ;;				(delete-backward-char)))
   (local-set-key (kbd "[")   'skeleton-pair-insert-maybe))
 
 (add-hook 'c-mode-common-hook 'my-c-mode-auto-pair)
 
 (defun my-c-mode-common-hook()
   ;; ====================== *compilation* ===============================
-  (add-hook 'c-mode-common-hook 
+  (add-hook 'c-mode-common-hook
             (lambda ()
               (which-function-mode t)))
-  
+
   (defun do-compile()
     (interactive)
     ;; (setq compilation-window-height 16)
     ;; (setq compilation-scroll-output t)
     (setq compilation-finish-functions
-	  (lambda (buf str)
-	    (if (string-match "exited abnormally" str)
-		;;there were errors
-		(message "compilation errors, C-M-n to goto next error.")
-	      ;;no errors, make the compilation window go away in 5.0 seconds
-	      ;;(run-at-time 5.0 nil 'delete-windows-on buf)
-	      (message "No compilation errors!")
-	      
-	      (if (gnus-buffer-exists-p "*c-term*")
-		  (progn
-		    (switch-to-buffer-other-window "*c-term*")
-		    (term-send-up))
-		
-		;; else create buffer "*c-term*
-		(switch-to-buffer-other-window "*compilation*")
-		(split-window-vertically nil)
-		(ansi-term "/bin/bash" "c-term")
-		))))
+          (lambda (buf str)
+            (if (string-match "exited abnormally" str)
+                ;;there were errors
+                (message "compilation errors, C-M-n to goto next error.")
+              ;;no errors, make the compilation window go away in 5.0 seconds
+              ;;(run-at-time 5.0 nil 'delete-windows-on buf)
+              (message "No compilation errors!")
+              ;; only allow gui-version to generate terminal buffer
+              (if (window-system)
+                  (if (gnus-buffer-exists-p "*c-term*")
+                      (progn
+                        (switch-to-buffer-other-window "*c-term*")
+                        (term-send-up))
+                    ;; else create buffer "*c-term*
+                    (switch-to-buffer-other-window "*compilation*")
+                    (split-window-vertically nil)
+                    (ansi-term "/bin/bash" "c-term")
+                    )))))
     (compile (make-command))
     )
 
   ;; ================================================================
   (defun make-command()
-    
+
     (if   (or (file-exists-p "makefile")
               (file-exists-p "Makefile"))
-	(progn
-	  (message "*Makefile found*")
-	  "make")
-      
+        (progn
+          (message "*Makefile found*")
+          "make")
+
       (if  (file-exists-p "SConstruct")
-	  "scons"
-	(let ((file (file-name-nondirectory buffer-file-name)))
-	  (if (or (equal (file-name-extension buffer-file-name) "cc")
-		  (equal (file-name-extension buffer-file-name) "c++")
-		  (equal (file-name-extension buffer-file-name) "cpp"))
-	      (progn
-		(format "%s %s %s -o %s"
-			(or (getenv "CC") "g++")
-			(or (getenv "CPPFLAGS")"-Wall -g")
-			buffer-file-name 
-			(file-name-sans-extension file)
-			))
+          "scons"
+        (let ((file (file-name-nondirectory buffer-file-name)))
+          (if (or (equal (file-name-extension buffer-file-name) "cc")
+                  (equal (file-name-extension buffer-file-name) "c++")
+                  (equal (file-name-extension buffer-file-name) "cpp"))
+              (progn
+                (format "%s %s %s -o %s"
+                        (or (getenv "CC") "g++")
+                        (or (getenv "CPPFLAGS")"-Wall -g")
+                        buffer-file-name
+                        (file-name-sans-extension file)
+                        ))
 
-	    ;; for simple program
-	    (format "%s -o %s %s %s %s"
-	            (or (getenv "CC") "gcc")
-	            (file-name-sans-extension file)
-	            (or (getenv "CPPFLAGS")"-DDEBUG=9")
-	            (or (getenv "CFLAGS") " -g -Wall -Wshadow")
-	            file)
-	    
-	    ;; ;; for compiling GTK program
-	    ;; (format "%s -o %s %s %s %s %s"
-	    ;; 	    (or (getenv "CC") "gcc")
-	    ;; 	    (file-name-sans-extension file)
-	    ;; 	    (or (getenv "GTKFLAGS") "`pkg-config --cflags --libs gtk+-2.0 gmodule-2.0 libglade-2.0`")
-	    ;; 	    (or (getenv "CPPFLAGS")"-DDEBUG=9")
-	    ;; 	    (or (getenv "CFLAGS") "-std=c99 -pedantic -Wall -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion  -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wnested-externs -Winline -g")
-	    ;; 	    file)
+            ;; for simple program
+            (format "%s -o %s %s %s %s"
+                    (or (getenv "CC") "gcc")
+                    (file-name-sans-extension file)
+                    (or (getenv "CPPFLAGS")"-DDEBUG=9")
+                    (or (getenv "CFLAGS") " -g -Wall -Wshadow")
+                    file)
 
-	    )))))
+            ;; ;; for compiling GTK program
+            ;; (format "%s -o %s %s %s %s %s"
+            ;; 	    (or (getenv "CC") "gcc")
+            ;; 	    (file-name-sans-extension file)
+            ;; 	    (or (getenv "GTKFLAGS") "`pkg-config --cflags --libs gtk+-2.0 gmodule-2.0 libglade-2.0`")
+            ;; 	    (or (getenv "CPPFLAGS")"-DDEBUG=9")
+            ;; 	    (or (getenv "CFLAGS") "-std=c99 -pedantic -Wall -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion  -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wnested-externs -Winline -g")
+            ;; 	    file)
+
+            )))))
 
 
   (defun do-lint()
@@ -120,13 +120,13 @@
     (compile compile-command)
     )
 
-  (defun do-cdecl () 
+  (defun do-cdecl ()
     (interactive)
     (shell-command
      (concat "cdecl explain \"" (buffer-substring (region-beginning)
                                                   (region-end)) "\""))
     )
-  
+
   ;; ================================================================
   ;; very useful tool!!!
   ;; compile
@@ -134,7 +134,7 @@
 
   ;; ================================================================
   ;; debug
-  (setq gdb-show-main t)  
+  (setq gdb-show-main t)
   (setq gdb-many-windows t)
   (setq gdb-speedbar-auto-raise nil)
 
@@ -156,7 +156,7 @@
   (define-key c-mode-base-map "\C-\M-n" 'next-error)
   (define-key c-mode-base-map "\C-\M-p" 'previous-error)
   (define-key c-mode-base-map "\C-c\C-t" "\C-a\C- \C-n\M-w\C-y\C-p")
-  
+
   ;; ================================================================
   ;; mode load here.
   ;; c-eldoc.el must be load before using this
@@ -168,7 +168,7 @@
   (set (make-local-variable 'company-backends) '(company-semantic))
   ;; company mode
   (company-mode 1)
-  
+
   ;; basic configure
   (setq indent-tabs-mode nil)		; use space instead of tab
   (c-set-style "stroustrup")
