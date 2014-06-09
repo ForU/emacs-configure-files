@@ -1,4 +1,3 @@
-
 (defun my-transparent ()
   "make the frame transparent."
   (interactive)

@@ -1,8 +1,0 @@
-(define-key doc-view-mode-map "j" "\C-n")
-(define-key doc-view-mode-map "k" "\C-p")
-(define-key doc-view-mode-map "," "p")
-(define-key doc-view-mode-map "." "n")
-(define-key doc-view-mode-map "=" 'doc-view-enlarge)
-(define-key doc-view-mode-map "-" 'doc-view-shrink)
-
-

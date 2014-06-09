@@ -1,15 +1,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ================================================================	   ;;
-;; .emacs configure principles:       				       		       ;;
+;; .emacs configure principles:       				       	   ;;
 ;; 1 extension , myconfig and programconf loads elispfiles	       	   ;;
 ;; 2 need_load_path is not included in the autoload path(above),   	   ;;
 ;;   so there is no need to put files in the autoload path to      	   ;;
-;;   avoid load files twice.			            	       		   ;;
+;;   avoid load files twice.			            	       	   ;;
 ;; 3 make collections between each other as simple as possible.    	   ;;
-;;   (configure dirs) for maintain.			       	            	   ;;
+;;   (configure dirs) for maintain.			       	           ;;
 ;; 4 no special theme configure except some common configure for  	   ;;
-;;   maintain.                      								   ;;
-;; 5 own configure comes last !!!                                      ;;
+;;   maintain.                      					   ;;
+;; 5 own configure comes last !!!                                          ;;
 ;; ================================================================	   ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -39,3 +39,4 @@
 
 ;; ===========================================================================
 ;; configure ends here.
+(put 'ido-exit-minibuffer 'disabled nil)
