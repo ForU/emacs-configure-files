@@ -1,9 +1,8 @@
-
 (defun my-transparent ()
   "make the frame transparent."
   (interactive)
   ;; ;;(set-frame-parameter (selected-frame) 'alpha '(<active> [<inactive>]))
-  (set-frame-parameter (selected-frame) 'alpha '(80 80))
+  (set-frame-parameter (selected-frame) 'alpha '(95 85))
   ;;(add-to-list 'default-frame-alist '(alpha 65 50))
   )
 
