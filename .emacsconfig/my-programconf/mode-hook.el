@@ -9,7 +9,7 @@
   (auto-fill-mode 0)
   (auto-complete-mode 1)
   (local-set-key (kbd "<f5>") 'compile)
-)
+  )
 (add-hook 'LaTeX-mode-hook 'my-LaTeX-mode-hook)
 
 ;; ================================================================
@@ -60,6 +60,10 @@
 ;; ================================================================
 ;; python
 (defun my-python-mode-hook()
+  (setq indent-tabs-mode nil)
+  (setq tab-width 4)
+  (setq python-indent 4)
+  ;; keys binding
   (local-set-key (kbd "<f5>")
 				 (lambda ()
 				   (interactive)

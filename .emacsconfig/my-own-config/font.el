@@ -40,7 +40,7 @@
                              nil t))))
 
     (cond
-     ((eq font-name 'freemono)            (set-default-font "freemono-12"))
+     ((eq font-name 'freemono)            (set-default-font "-unknown-FreeMono-bold-normal-normal-*-19-*-*-*-m-0-iso10646-1"))
      ((eq font-name 'freemono-bold)       (set-default-font "freemono-12:bold"))
      ((eq font-name 'freemono-small-bold) (set-default-font "freemono-11:bold"))
      ((eq font-name 'default-large)       (set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1"))
