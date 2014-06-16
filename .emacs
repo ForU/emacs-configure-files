@@ -39,4 +39,3 @@
 
 ;; ===========================================================================
 ;; configure ends here.
-(put 'ido-exit-minibuffer 'disabled nil)

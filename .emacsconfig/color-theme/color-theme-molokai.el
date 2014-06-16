@@ -114,7 +114,7 @@
      (woman-unknown ((t (:foreground "#66D9EF"))))
      (ecb-default-general-face ((t: (:foreground "smoke white"))))
      (linum ((t: (:foreground "#465457" :background "#232526" ))))
-     (semantic-highlight-edits-mode ((t: (:background "#1B1D1E"))))
+     (semantic-highlight-edits-face ((t: (:background "#1B1D1E"))))
      ))
   (term-color-for-molokai)
   )

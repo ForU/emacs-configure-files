@@ -81,8 +81,6 @@
   (if (eq font-name nil)
       (my-font-set-interactive)))
 
-(set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-13-*-*-*-m-0-iso10646-1")
-
 ;; ================================================================
 ;; end here.
 ;; Sun Apr 24 15:23:51 2011

@@ -47,7 +47,6 @@
 			)
 		)
 	  ;; else, none of above
-	  ;; (scroll-bar-mode 0)
 	  (menu-bar-mode 0)
 	  (tool-bar-mode 0)
 	  (my-fringe-small)
@@ -56,6 +55,10 @@
   ;; else, terminal
   (menu-bar-mode 0)
   (xterm-mouse-mode 1))
+
+;; always
+(scroll-bar-mode 0)
+
 ;; ================================================================
 ;; end here.
 ;; 2012-05-16 xiangshou24@gmail.com
