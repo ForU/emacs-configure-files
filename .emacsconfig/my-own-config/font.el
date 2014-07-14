@@ -81,8 +81,6 @@
   (if (eq font-name nil)
       (my-font-set-interactive)))
 
-(set-default-font "lucida console-11")
-
 ;; ================================================================
 ;; end here.
 ;; Sun Apr 24 15:23:51 2011

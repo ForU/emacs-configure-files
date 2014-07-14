@@ -5,3 +5,4 @@
 ;; (defun dark()
 ;;   (interactive)
 ;;   (set-background-color "black"))
+;;     (color-theme-dark))

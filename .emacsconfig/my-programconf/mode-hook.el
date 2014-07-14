@@ -413,6 +413,12 @@
 (setq dired-omit-files "^\\...+$")
 (add-hook 'dired-mode-hook 'my-dired-mode-hook)
 
+
+;; ================================================================
+(defun my-org-mode-hook()
+  (auto-fill-mode 0))
+
+(add-hook 'org-mode-hook 'my-org-mode-hook)
 ;; ================================================================
 ;; end here.
 ;; 2012-04-20 10:30:39 li_kui

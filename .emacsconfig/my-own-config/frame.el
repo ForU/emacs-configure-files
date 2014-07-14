@@ -16,7 +16,7 @@
 (defun my-large-frame()
   "large frame size!"
   (interactive)
-  (my-arrange-frame 140 45 200 50))
+  (my-arrange-frame 175 60 15 15))
 
 ;;================================================================
 ;; code ends here
