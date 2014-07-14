@@ -24,7 +24,7 @@
                                ("courier")
                                ("courier-bold")
                                ("lucida")
-                               ("lucida-11")
+                               ("lucida-small")
                                ("wqy")
                                ("proggy")
                                ("proggy-bp")
@@ -56,8 +56,8 @@
      ((eq font-name 'consolas-large)            (set-default-font"-microsoft-Consolas-normal-normal-normal-*-20-*-*-*-m-0-iso10646-1"))
      ((eq font-name 'courier)             (set-default-font "-bitstream-Courier 10 Pitch-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1"))
      ((eq font-name 'courier-bold)        (set-default-font "-adobe-courier-bold-r-normal-*-17-*-*-*-*-*-*"))
-     ((eq font-name 'lucida)              (set-default-font "lucida console-10"))
-     ((eq font-name 'lucida-11)        (set-default-font "lucida console-11"))
+     ((eq font-name 'lucida)              (set-default-font "lucida console-11"))
+     ((eq font-name 'lucida-small)        (set-default-font "lucida console-10"))
      ((eq font-name 'wqy)                 (set-default-font "-WenQuanYi-WenQuanYi Bitmap Song-normal-normal-normal-*-15-*-*-*-*-*-iso10646-1"))
      ((eq font-name 'proggy)              (set-default-font "-unknown-ProggyCleanTTSZ-normal-normal-normal-*-16-*-*-*-m-0-iso10646-1"))
      ((eq font-name 'proggy-bp)           (set-default-font "-unknown-ProggyCleanTTSZBP-normal-normal-normal-*-16-*-*-*-m-0-iso10646-1"))
@@ -80,7 +80,7 @@
   "set font: can set font interactively or througnt function by given the function a font-name"
   (if (eq font-name nil)
       (my-font-set-interactive)))
-;; (set-default-font "lucida console-10")
+
 ;; ================================================================
 ;; end here.
 ;; Sun Apr 24 15:23:51 2011
