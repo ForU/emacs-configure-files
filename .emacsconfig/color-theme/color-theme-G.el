@@ -1,17 +1,17 @@
 (require 'color-theme)
 
-(defun term-color-for-X()
-  (setq term-default-bg-color "white")
+(defun term-color-for-G()
+  (setq term-default-bg-color "gray80")
   (setq term-default-fg-color "black")
   )
 
-(defun color-theme-X ()
+(defun color-theme-G ()
   ""
   (interactive)
   (color-theme-install
-   '(color-theme-X
+   '(color-theme-G
      ((foreground-color . "black")
-      (background-color . "white")
+      (background-color . "gray80")
       (background-mode . dark)
       (cursor-color . "#73d216") ; medium chameleon
       (mouse-color . "#73d216"))
@@ -39,18 +39,17 @@
      (fringe ((t (:background "white"))))
      ;; (border ((t (:background "#0f0f0f"))))
      (mode-line ((t (:background "gray70" :foreground "black"))))
-	 (mode-line-buffer-id ((t (:foreground "#2674f2"))))
-     (mode-line-inactive ((t (:background "gray80" :foreground "gray20"))))
+	 (mode-line-buffer-id ((t (:foreground "#2674f2" :bold t))))
+     (mode-line-inactive ((t (:background "gray90" :foreground "gray20"))))
      (minibuffer-prompt ((t (:foreground "#2674f2"))))
-     (region ((t (:background "gray80"))))
+     (region ((t (:background "gray70"))))
 
      ;; Parenthesis matching
      (show-paren-match-face ((t (:foreground "#2e3436" :background "#73d216"))))
      (show-paren-mismatch-face ((t (:foreground "#2e3436" :background "#ef2929"))))
 
      ;; Line highlighting
-     (highlight ((t (:background "gray80" :foreground nil))))
-     (highlight-current-line-face ((t (:background "gray80" :foreground nil))))
+     (hl-line ((t (:background "gray70"))))
 
      ;; Calendar
      (holiday-face ((t (:foreground "#cc0000")))) ; dark scarlet red
@@ -85,4 +84,4 @@
   (term-color-for-X)
   )
 
-(provide 'color-theme-X)
+(provide 'color-theme-G)

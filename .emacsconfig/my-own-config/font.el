@@ -80,7 +80,7 @@
   "set font: can set font interactively or througnt function by given the function a font-name"
   (if (eq font-name nil)
       (my-font-set-interactive)))
-
+;; (set-default-font "lucida console-10")
 ;; ================================================================
 ;; end here.
 ;; Sun Apr 24 15:23:51 2011
