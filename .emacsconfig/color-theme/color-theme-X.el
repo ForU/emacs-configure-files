@@ -1,8 +1,8 @@
 (require 'color-theme)
 
 (defun term-color-for-X()
-  (setq term-default-bg-color "white")
-  (setq term-default-fg-color "black")
+  (setq term-default-bg-color "gray80")
+  (setq term-default-fg-color "gray20")
   )
 
 (defun color-theme-X ()
@@ -10,16 +10,16 @@
   (interactive)
   (color-theme-install
    '(color-theme-X
-     ((foreground-color . "black")
-      (background-color . "white")
+     ((foreground-color . "gray20")
+      (background-color . "gray80")
       (background-mode . dark)
       (cursor-color . "#73d216") ; medium chameleon
       (mouse-color . "#73d216"))
 
      ;;; Standard font lock faces
      (default ((t (nil))))
-     (font-lock-comment-face ((t (:foreground "gray30" :italic t))))
-     (font-lock-comment-delimiter-face ((t (:foreground "gray60" :italic t))))
+     (font-lock-comment-face ((t (:foreground "red3" :bold t :italic t))))
+     (font-lock-comment-delimiter-face ((t (:foreground "red3" :bold t :italic t))))
      (font-lock-doc-face ((t (:foreground "#77507b"))))
      (font-lock-doc-string-face ((t (:foreground "#77507b"))))
      (font-lock-string-face ((t (:foreground "#77507b"))))
@@ -36,21 +36,21 @@
      (isearch-lazy-highlight-face ((t (:foreground "#080808" :background "#2e3436"))))
 
      ;; Emacs Interface
-     (fringe ((t (:background "white"))))
+     (fringe ((t (:background "gray80"))))
      ;; (border ((t (:background "#0f0f0f"))))
-     (mode-line ((t (:background "gray70" :foreground "black"))))
-	 (mode-line-buffer-id ((t (:foreground "#2674f2"))))
-     (mode-line-inactive ((t (:background "gray80" :foreground "gray20"))))
+     ;; (mode-line ((t (:foreground "gray20"))))
+	 (mode-line-buffer-id ((t (:foreground "blue3" :bold t))))
+     ;; (mode-line-inactive ((t (:foreground "gray10"))))
      (minibuffer-prompt ((t (:foreground "#2674f2"))))
-     (region ((t (:background "gray80"))))
+     (region ((t (:background "gray60"))))
 
      ;; Parenthesis matching
      (show-paren-match-face ((t (:foreground "#2e3436" :background "#73d216"))))
      (show-paren-mismatch-face ((t (:foreground "#2e3436" :background "#ef2929"))))
 
      ;; Line highlighting
-     (highlight ((t (:background "gray80" :foreground nil))))
-     (highlight-current-line-face ((t (:background "gray80" :foreground nil))))
+     (highlight ((t (:background "gray20" :foreground nil))))
+     (highlight-current-line-face ((t (:background "gray20" :foreground nil))))
 
      ;; Calendar
      (holiday-face ((t (:foreground "#cc0000")))) ; dark scarlet red
