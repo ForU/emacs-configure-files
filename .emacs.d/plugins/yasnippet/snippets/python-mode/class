@@ -1,12 +1,3 @@
-# -*- coding: utf-8 -*-
-# name: class
-# contributor: Orestis Markou
-# contributor: Nishio Hirokazu
-# contributor: Yasser González Fernández <yglez@uh.cu>
-# key: class
-# --
-class ${1:ClassName}(${2:object}):
-    """$3
-    """
-    def __init__(self, $4):
+class $1(object):
+    def __init__(self, ):
         $0
