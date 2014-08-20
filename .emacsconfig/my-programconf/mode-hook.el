@@ -196,6 +196,7 @@
 				(" \\.scm$"        . scheme-mode)
 				(" \\.pl$"         . perl-mode)
 				(" \\.py$"         . python-mode)
+                (" \\.thrift$"     . java-mode)
 				)
 			  auto-mode-alist))
 
@@ -419,6 +420,7 @@
   (auto-fill-mode 0))
 
 (add-hook 'org-mode-hook 'my-org-mode-hook)
+
 ;; ================================================================
 ;; end here.
 ;; 2012-04-20 10:30:39 li_kui

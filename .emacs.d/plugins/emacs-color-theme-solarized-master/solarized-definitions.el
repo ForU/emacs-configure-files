@@ -208,6 +208,8 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
              (minibuffer-prompt ((t (,@fmt-bold ,@fg-cyan)))) ; Question
              (mode-line  ; StatusLine
               ((t (,@fg-base1 ,@bg-base02 ,@fmt-revbb :box nil))))
+             (mode-line-buffer-id  ; StatusLine
+              ((t (,@fg-base1 ,@bg-base02 ,@fmt-revbb :box nil))))
              (mode-line-inactive ; StatusLineNC
               ((t (,@fg-base00 ,@bg-base02 ,@fmt-revbb :box nil))))
              (region ((t (,@fg-base01 ,@bg-base03 ,@fmt-revbb)))) ; Visual
@@ -291,6 +293,7 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
              ;; font-lock
              (font-lock-builtin-face ((t (,@fmt-none ,@fg-green)))) ; Statement
              (font-lock-comment-face ((t (,@fmt-ital ,@fg-base01)))) ; Comment
+             ;;(font-lock-comment-face ((t (:foreground "" :italic t :bold t)))) ; Comment
              (font-lock-constant-face ((t (,@fmt-none ,@fg-cyan)))) ; Constant
              (font-lock-function-name-face ; Identifier
               ((t (,@fmt-none ,@fg-blue))))

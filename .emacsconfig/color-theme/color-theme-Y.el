@@ -1,35 +1,35 @@
 (require 'color-theme)
 
-(defun term-color-for-G()
-  (setq term-default-bg-color "#C6CCD0")
+(defun term-color-for-Y()
+  (setq term-default-bg-color "gray80")
   (setq term-default-fg-color "black")
   )
 
-(defun color-theme-G ()
+(defun color-theme-Y ()
   ""
   (interactive)
   (color-theme-install
-   '(color-theme-G
+   '(color-theme-Y
      ((foreground-color . "black")
-      (background-color . "#C6CCD0")
+      (background-color . "gray80")
       (background-mode . dark)
       (cursor-color . "#73d216") ; medium chameleon
       (mouse-color . "#73d216"))
 
      ;;; Standard font lock faces
      (default ((t (nil))))
-     (font-lock-comment-face ((t (:foreground "red3" :italic t :bold t))))
-     (font-lock-comment-delimiter-face ((t (:foreground "red3" :italic t :bold t))))
+     (font-lock-comment-face ((t (:foreground "red3" :italic t :bold nil))))
+     (font-lock-comment-delimiter-face ((t (:foreground "red3" :italic t :bold nil))))
      (font-lock-doc-face ((t (:foreground "#77507b"))))
      (font-lock-doc-string-face ((t (:foreground "#77507b"))))
      (font-lock-string-face ((t (:foreground "#77507b"))))
-     (font-lock-keyword-face ((t (:foreground "#9726E0" :bold t))))
-     (font-lock-builtin-face ((t (:foreground "#484085" :bold t))))
-     (font-lock-function-name-face ((t (:foreground "#0709EE" :bold t))))     (font-lock-variable-name-face ((t (:foreground "#975331" ))))
+     (font-lock-keyword-face ((t (:foreground "#9726E0" :bold nil))))
+     (font-lock-builtin-face ((t (:foreground "#484085" :bold nil))))
+     (font-lock-function-name-face ((t (:foreground "#0709EE" :bold nil))))     (font-lock-variable-name-face ((t (:foreground "#975331" ))))
      (font-lock-preprocessor-face ((t (:foreground "#888a85"))))
      (font-lock-constant-face ((t (:foreground "#4e9a06" :italic t))))
      (font-lock-type-face ((t (:foreground "#268627"))))
-     (font-lock-warning-face ((t (:bold t :foreground "#cc0000"))))
+     (font-lock-warning-face ((t (:bold nil :foreground "#cc0000"))))
 
      ;; Search
      (isearch ((t (:foreground "#080808" :background "#edd400"))))
@@ -39,7 +39,7 @@
      (fringe ((t (:background "white"))))
      ;; (border ((t (:background "#0f0f0f"))))
      (mode-line ((t (:background "gray70" :foreground "black"))))
-	 (mode-line-buffer-id ((t (:foreground "#2674f2" :bold t))))
+	 (mode-line-buffer-id ((t (:foreground "#2674f2" :bold nil))))
      (mode-line-inactive ((t (:background "gray90" :foreground "gray20"))))
      (minibuffer-prompt ((t (:foreground "#2674f2"))))
      (region ((t (:background "gray70"))))
@@ -59,8 +59,8 @@
      (info-xref-visited ((t (:foreground "#ad7fa8")))) ; light plum
 
      ;;; AUCTeX
-     (font-latex-sectioning-5-face ((t (:foreground "#c4a000" :bold t)))) ; dark butter
-     (font-latex-bold-face ((t (:foreground "#4e9a06" :bold t)))) ; dark chameleon
+     (font-latex-sectioning-5-face ((t (:foreground "#c4a000" :bold nil)))) ; dark butter
+     (font-latex-bold-face ((t (:foreground "#4e9a06" :bold nil)))) ; dark chameleon
      (font-latex-italic-face ((t (:foreground "#4e9a06" :italic t)))) ; dark chameleon
      (font-latex-math-face ((t (:foreground "#855c1b")))) ; med-dark chocolate
      (font-latex-string-face ((t (:foreground "#77507b")))) ; plum
@@ -70,18 +70,18 @@
      ;;; post-mode
      (post-emoticon-face ((t (:background "#edd400" :foreground "#000000")))) ; medium butter
      (post-header-value-face ((t (:foreground "#4e9a06")))) ; dark chameleon
-     (post-header-keyword-face ((t (:foreground "#4e9a06" :bold t)))) ; dark chameleon
+     (post-header-keyword-face ((t (:foreground "#4e9a06" :bold nil)))) ; dark chameleon
      (post-signature-text-face ((t (:foreground "#cc0000")))) ; dark scarlet red
      (post-quoted-text-face ((t (:foreground "#855c1b" :slant normal)))) ; med-dark chocolate
      (post-double-quoted-text-face ((t (:foreground "#77507b" :slant normal)))) ; plum
      (post-multiply-quoted-text-face ((t (:foreground "#61635e" :slant normal)))) ; dark aluminum
-     (post-email-address-text-face ((t (:foreground "#729fcf" :bold t)))) ; light sky blue
-     (post-url-face ((t (:foreground "#729fcf" :bold t)))) ; light sky blue
+     (post-email-address-text-face ((t (:foreground "#729fcf" :bold nil)))) ; light sky blue
+     (post-url-face ((t (:foreground "#729fcf" :bold nil)))) ; light sky blue
      (semantic-highlight-edits-face ((t (:background "#0"))))
      ;; same as comment
      (linum ((t: (:foreground "gray30"))))
      ))
-  (term-color-for-G)
+  (term-color-for-Y)
   )
 
-(provide 'color-theme-G)
+(provide 'color-theme-Y)
