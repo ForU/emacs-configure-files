@@ -11,7 +11,7 @@
 (defun my-default-frame()
   "default frame size!"
   (interactive)
-  (my-arrange-frame 80 40 80 40))
+  (my-arrange-frame 80 20 80 250))
 
 (defun my-large-frame()
   "large frame size!"

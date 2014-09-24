@@ -10,7 +10,7 @@
 
 (defun term-color-for-good()
   (setq term-default-bg-color "#1B1D1E")
-  (setq term-default-fg-color "#1a2122")
+  (setq term-default-fg-color "gray80")
   )
 
 
@@ -55,7 +55,7 @@
      (font-lock-constant-face ((t (:foreground "#AE81FF"))))
      (font-lock-doc-face ((t (:foreground "#E6DB74" :slant italic))))
      (font-lock-function-name-face ((t (:foreground "#F92672" :slant italic))))
-     (font-lock-keyword-face ((t (:foreground "#66D9EF" :bold t))))
+     (font-lock-keyword-face ((t (:foreground "#66D9EF"))))
      (font-lock-negation-char-face ((t (:weight bold))))
      (font-lock-preprocessor-face ((t (:foreground "#A6E22E"))))
      (font-lock-regexp-grouping-backslash ((t (:weight bold))))
@@ -67,7 +67,7 @@
                                               :background "#333333"))))
      (fringe ((t (:background "#232526"))))
      (highlight ((t (:foreground "#000000" :background "#C4BE89"))))
-     (hl-line ((t (:background "#1B1D1E" :underline t))))
+     (hl-line ((t (:background "#1B1D1E" :underline nil))))
      (icompletep-choices ((t (:foreground "#F92672"))))
      (icompletep-determined ((t (:foreground "#A6E22E"))))
      (icompletep-keys ((t (:foreground "#F92672"))))

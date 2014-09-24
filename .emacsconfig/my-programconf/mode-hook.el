@@ -421,6 +421,18 @@
 
 (add-hook 'org-mode-hook 'my-org-mode-hook)
 
+(defun my-java-mode-hook ()
+  (make-local-variable 'skeleton-pair-alist)
+  (setq skeleton-pair-alist  '(
+							   (?` ?` _ "''")
+							   (?\( _ ")")
+							   (?\[  _ " ]")
+							   ;;(?\< _ ">")
+							   (?{ _ "}")
+							   (?\" _ "\"")))
+  )
+(add-hook 'java-mode-hook 'my-java-mode-hook)
+
 ;; ================================================================
 ;; end here.
 ;; 2012-04-20 10:30:39 li_kui

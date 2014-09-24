@@ -20,7 +20,7 @@
 
 (mapc   'load (directory-files "~/.emacsconfig/lib"             t "\\.el$"))
 (mapc   'load (directory-files "~/.emacsconfig/auto-complete"   t "\\.el$"))
-;; (mapc   'load (directory-files "~/.emacsconfig/cedet"           t "\\.el$"))
+(mapc   'load (directory-files "~/.emacsconfig/cedet"           t "\\.el$"))
 ;;(mapc 'load (directory-files "~/.emacsconfig/clang"           t "\\.el$"))
 (mapc   'load (directory-files "~/.emacsconfig/yasnippet"       t "\\.el$"))
 (mapc   'load (directory-files "~/.emacsconfig/org-mode"        t "\\.el$"))
@@ -37,5 +37,6 @@
 ;;(mapc 'load (directory-files "~/.emacsconfig/slime"           t "\\.el$"))
 (mapc   'load (directory-files "~/.emacsconfig/my-own-config"   t "\\.el$"))
 
+(load-file "~/.emacs.d/menu_custom.el")
 ;; ===========================================================================
 ;; configure ends here.

@@ -2,7 +2,7 @@
   "make the frame transparent."
   (interactive)
   ;; ;;(set-frame-parameter (selected-frame) 'alpha '(<active> [<inactive>]))
-  (set-frame-parameter (selected-frame) 'alpha '(90 85))
+  (set-frame-parameter (selected-frame) 'alpha '(90 50))
   ;;(add-to-list 'default-frame-alist '(alpha 65 50))
   )
 

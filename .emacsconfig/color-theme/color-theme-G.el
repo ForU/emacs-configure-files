@@ -38,9 +38,9 @@
      ;; Emacs Interface
      (fringe ((t (:background "white"))))
      ;; (border ((t (:background "#0f0f0f"))))
-     (mode-line ((t (:background "gray70" :foreground "black"))))
+     (mode-line ((t (:background "gray70" :foreground "black" :box (:line-width 1 :color "gray50")))))
 	 (mode-line-buffer-id ((t (:foreground "#2674f2" :bold t))))
-     (mode-line-inactive ((t (:background "gray90" :foreground "gray20"))))
+     (mode-line-inactive ((t (:background "gray90" :foreground "gray20" :box (:line-width 1 :color "gray70")))))
      (minibuffer-prompt ((t (:foreground "#2674f2"))))
      (region ((t (:background "gray70"))))
 
@@ -77,7 +77,7 @@
      (post-multiply-quoted-text-face ((t (:foreground "#61635e" :slant normal)))) ; dark aluminum
      (post-email-address-text-face ((t (:foreground "#729fcf" :bold t)))) ; light sky blue
      (post-url-face ((t (:foreground "#729fcf" :bold t)))) ; light sky blue
-     (semantic-highlight-edits-face ((t (:background "#0"))))
+     (semantic-highlight-edits-face ((t (:background "#C6CCD0"))))
      ;; same as comment
      (linum ((t: (:foreground "gray30"))))
      ))
