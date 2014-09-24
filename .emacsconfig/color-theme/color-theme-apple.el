@@ -1,0 +1,58 @@
+(require 'color-theme)
+
+(defun term-color-for-apple()
+  (setq term-default-bg-color "#1a2122")
+  (setq term-default-fg-color "white")
+  )
+
+(defun color-theme-apple ()
+  ""
+  (interactive)
+  (color-theme-install
+   '(color-theme-apple
+     ((foreground-color . "white")
+      (background-color . "#1a2122")
+      (background-mode . dark)
+      (semantic-highlight-edits-face ((t (:background "#1B1D1E"))))
+      (fringe ((t (:background "black" :foreground "black"))))
+      (linum ((t: (:foreground "gray30"))))
+      (semantic-highlight-edits-face ((t: (:background "#1a2122"))))
+
+	 (mode-line ((t (:foreground "#66D9EF" :background "gray10" :box nil))))
+     (mode-line-buffer-id ((t (:foreground nil :weight semi-bold))))
+     (mode-line-inactive ((t (:foreground "white" :background "gray10" :box nil))))
+     (mode-line-mousable ((t (:foreground "#BCBCBC" :background "#000000"))))
+     (mode-line-mousable-minor-mode ((t (:foreground "#BCBCBC" :background "#000000"))))
+     (font-lock-builtin-face ((t (:foreground "#A6E22E"))))
+     (font-lock-comment-face ((t (:foreground "#465457" :slant italic))))
+     (font-lock-comment-delimiter-face ((t (:foreground "#465457" :slant italic))))
+     (font-lock-constant-face ((t (:foreground "#AE81FF"))))
+     (font-lock-doc-face ((t (:foreground "#E6DB74" :slant italic))))
+     (font-lock-function-name-face ((t (:foreground "#F92672" :slant italic))))
+     (font-lock-keyword-face ((t (:foreground "#66D9EF"))))
+     (font-lock-negation-char-face ((t (:weight bold))))
+     (font-lock-preprocessor-face ((t (:foreground "#A6E22E"))))
+     (font-lock-regexp-grouping-backslash ((t (:weight bold))))
+     (font-lock-regexp-grouping-construct ((t (:weight bold))))
+     (font-lock-string-face ((t (:foreground "#E6DB74"))))
+     (font-lock-type-face ((t (:foreground "#66D9EF"))))
+     (font-lock-variable-name-face ((t (:foreground "#F92672"))))
+     (font-lock-warning-face ((t (:foreground "#FFFFFF" :background "#333333"))))
+
+     (fringe ((t (:background "gray10"))))
+     (highlight ((t (:foreground "white" :background "#C4BE89"))))
+     (hl-line ((t (:background "alternateSelectedControlColor" :underline nil))))
+     (icompletep-choices ((t (:foreground "#F92672"))))
+     (icompletep-determined ((t (:foreground "#A6E22E"))))
+     (icompletep-keys ((t (:foreground "#F92672"))))
+     (icompletep-nb-candidates ((t (:foreground "#AE81FF"))))
+     (isearch ((t (:foreground "#C4BE89" :background "green"))))
+     (isearch-fail ((t (:foreground "#FFFFFF" :background "#333333"))))
+     (lazy-highlight ((t (:foreground "#465457" :background "#000000"))))
+
+
+      )))
+  (term-color-for-apple)
+  )
+
+(provide 'color-theme-apple)
