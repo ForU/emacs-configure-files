@@ -25,7 +25,8 @@
      (font-lock-string-face ((t (:foreground "#77507b"))))
      (font-lock-keyword-face ((t (:foreground "#9726E0" :bold t))))
      (font-lock-builtin-face ((t (:foreground "#484085" :bold t))))
-     (font-lock-function-name-face ((t (:foreground "#0709EE" :bold t))))     (font-lock-variable-name-face ((t (:foreground "#975331" ))))
+     (font-lock-function-name-face ((t (:foreground "#0709EE" :bold t))))
+     (font-lock-variable-name-face ((t (:foreground "#975331" ))))
      (font-lock-preprocessor-face ((t (:foreground "#888a85"))))
      (font-lock-constant-face ((t (:foreground "#4e9a06" :italic t))))
      (font-lock-type-face ((t (:foreground "#268627"))))
@@ -49,7 +50,7 @@
      (show-paren-mismatch-face ((t (:foreground "#2e3436" :background "#ef2929"))))
 
      ;; Line highlighting
-     (hl-line ((t (:background "gray70"))))
+     (hl-line ((t (:background "#729fcf"))))
 
      ;; Calendar
      (holiday-face ((t (:foreground "#cc0000")))) ; dark scarlet red
