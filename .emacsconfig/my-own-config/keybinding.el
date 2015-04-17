@@ -2,8 +2,8 @@
 ;; f1 ;; global: moccor
 ;; f2 ;; global: jump
 ;; f3 ;; global: highlight-symbol
-;; f4 ;; C/C++: xcscope; ibus(maybe should be a toggle)
-(global-set-key [(f4)] 'ibus-mode)
+;; f4 ;; C/C++: xcscope
+;; (global-set-key [(f4)] 'ibus-mode)
 ;; f5 ;; C/C++:  compile
 ;; f6 ;; C/C++:  debug
 ;; f7 ;; global: reload-file
@@ -14,7 +14,7 @@
 (global-set-key [(control f9)]  'man)
 ;; view mode
 (global-set-key [(f9)]    'view-mode)
- ;; f10;; global: linum
+;; f10;; global: linum
 (global-set-key [(f10)]         'global-linum-mode)
 (global-set-key [(control f10)] 'linum-mode)
 ;; (global-set-key [(f10)]         '(lambda() (interactive) (load-file "/usr/local/share/emacs/23.4/lisp/linum.el.gz")(global-linum-mode)))
@@ -22,6 +22,9 @@
 ;; f11;; global:
 ;; 	f11: when ibus-mode on, control ibus
 ;; f12: global: programconf/lib.el: (jump-to-term "c-term")
+
+(global-set-key (kbd "M-]") 'diff-hl-next-hunk)
+(global-set-key (kbd "M-[") 'diff-hl-previous-hunk)
 
 ;; ================================================================
 ;; redo:

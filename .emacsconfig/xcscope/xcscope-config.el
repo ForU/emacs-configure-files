@@ -5,16 +5,21 @@
 
 ;; ################################################################
 ;; key binding
-;; C/C++ 
+;; C/C++
 (defun my-cscope-c-common-mode-hook()
   (interactive)
   (define-key c-mode-base-map [(f4)]               'cscope-find-global-definition-no-prompting)
   (define-key c-mode-base-map [(control shift f4)] 'cscope-find-global-definition)
   (define-key c-mode-base-map [(control f4)]       'cscope-find-this-symbol)
   (define-key c-mode-base-map [(shift f4)]         'cscope-find-this-text-string)
-  ;(define-key c-mode-base-map "\M-j"              'cscope-next-symbol)
-  ;(define-key c-mode-base-map "\M-k"              'cscope-prev-symbol)
+  ;;(define-key c-mode-base-map "\M-j"              'cscope-next-symbol)
+  ;;(define-key c-mode-base-map "\M-k"              'cscope-prev-symbol)
   )
+
+(global-set-key [(f4)]               'cscope-find-global-definition-no-prompting)
+(global-set-key [(control shift f4)] 'cscope-find-global-definition)
+(global-set-key [(control f4)]       'cscope-find-this-symbol)
+(global-set-key [(shift f4)]         'cscope-find-this-text-string)
 
 ;; cscope-self
 (defun my-cscope-self-mode-hook()
@@ -44,6 +49,7 @@
 
 ;; add-hook
 (add-hook 'c-mode-common-hook 'my-cscope-c-common-mode-hook)
+(add-hook 'python-mode-hook 'my-cscope-c-common-mode-hook)
 (add-hook 'cscope-list-entry-hook 'my-cscope-self-mode-hook)
 
 ;; ================================================================

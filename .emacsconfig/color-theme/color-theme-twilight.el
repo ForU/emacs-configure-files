@@ -1,6 +1,7 @@
 (defun term-color-for-twilight()
   (setq term-default-bg-color "#141414")
-  (setq term-default-fg-color "#F8F8F8")
+  ;;(setq term-default-fg-color "#F8F8F8")
+  (setq term-default-fg-color "gray90")
   )
 
 (eval-when-compile
@@ -16,14 +17,16 @@
 	  (background-mode . dark)
 	  (border-color . "black")
 	  (cursor-color . "#DDDD00")
-	  (foreground-color . "#F8F8F8")
+	  ;;(foreground-color . "#F8F8F8")
+      (foreground-color . "gray90")
 	  (mouse-color . "sienna1"))
 	 (default ((t (:background "#141414" :foreground "#CACACA"))))
 	 (blue ((t (:foreground "blue"))))
 	 (border-glyph ((t (nil))))
 	 (buffers-tab ((t (:background "#141414" :foreground "#CACACA"))))
 	 (font-lock-builtin-face ((t (:foreground "#CACACA"))))
-	 (font-lock-comment-face ((t (:foreground "#5F5A60"))))
+     (font-lock-comment-delimiter-face ((t (:foreground "#5F5A60" :italic t :bold t))))
+	 (font-lock-comment-face ((t (:foreground "#5F5A60" :bold t))))
 	 (font-lock-constant-face ((t (:foreground "#CF6A4C"))))
 	 (font-lock-doc-string-face ((t (:foreground "DarkOrange"))))
 	 (font-lock-function-name-face ((t (:foreground "#9B703F"))))
@@ -31,7 +34,8 @@
 	 (font-lock-preprocessor-face ((t (:foreground "Aquamarine"))))
 	 (font-lock-reference-face ((t (:foreground "SlateBlue"))))
 
-	 ;; Enhanced-Ruby-Mode
+
+    ;; Enhanced-Ruby-Mode
 	 (ruby-string-delimiter-face  ((t (:foreground "#5A6340"))))
 	 (ruby-regexp-delimiter-face ((t (:foreground "orange"))))
 	 (ruby-heredoc-delimiter-face ((t (:foreground "#9B859D"))))
@@ -44,15 +48,16 @@
 	 (ido-subdir ((t (:foreground "#CF6A4C"))))
 	 (ido-first-match ((t (:foreground "#8F9D6A"))))
 	 (ido-only-match ((t (:foreground "#8F9D6A"))))
-	 (mumamo-background-chunk-submode ((t (:background "#222222")))) 
+	 (mumamo-background-chunk-submode ((t (:background "#222222"))))
 
-	 (linum ((t (:background "#141314" :foreground "red"))))
-	 (hl-line ((t (:background "#373446"))))  
+	 (linum ((t (:background "#141314" :foreground "gray50"))))
+	 (hl-line ((t ( :underline t))))
 	 (region ((t (:background "#373446"))))
 	 (yas/field-highlight-face ((t (:background "#27292A"))))
-	 (mode-line ((t (:background "grey75" :foreground "black" :box (:line-width -1 :color "grey85") :height 1.0))))
+     (fringe ((t (:background "gray30"))))
      (mode-line-buffer-id ((t (:foreground "blue3" :bold t))))
-	 ;; (mode-line-inactive ((t (:background "grey10" :foreground "grey40" :box (:line-width -1 :color "grey15") :height 1.0))))
+	 (mode-line ((t (:background "grey80" :foreground "gray20" :box (:line-width -1 :color "grey50") :height 1.0))))
+	 (mode-line-inactive ((t (:background "grey20" :foreground "gray70" :weight light :box (:line-width -1 :color "gray15") :height 1.0))))
 
 	 (magit-item-highlight ((t (:background "#191930"))))
 	 (magit-diff-add ((((class color) (background dark)) (:foreground "green"))))
@@ -85,7 +90,10 @@
      (tabbar-button ((t (:foreground "red4" :bold t :box (:line-width 1 :color "gray20" :style nil)))))
      (tabbar-separator ((t (:foreground "gray20" :background "white" :box (:line-width 1 :color "gray20" :style nil)))))
 	 ;; others
-	 (zmacs-region ((t (:background "snow" :foreground "blue"))))))
+	 (zmacs-region ((t (:background "snow" :foreground "blue"))))
+     (moccur-face ((t (:background "gray30"))))
+     (trailing-whitespace ((t (:background "gray50"))))
+     ))
   (term-color-for-twilight))
 
 (provide 'color-theme-twilight)

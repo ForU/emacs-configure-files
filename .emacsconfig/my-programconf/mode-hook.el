@@ -89,8 +89,19 @@
 				 (lambda ()
 				   (interactive)
 				   (local-set-key [(f5)] (jump-to-terminal "shell-term")))))
+
+(defun my-python-mode-hook2 ()
+  ;; for diff-hl-mode
+  (diff-hl-mode 1)
+  ;; keys
+  (local-set-key (kbd "M-]") 'diff-hl-next-hunk)
+  (local-set-key (kbd "M-[") 'diff-hl-previous-hunk)
+  )
+
 (add-hook 'python-mode-hook 'my-python-mode-hook)
 (add-hook 'python-mode-hook 'my-python-mode-hook1)
+(add-hook 'python-mode-hook 'my-python-mode-hook2)
+
 
 ;; ================================================================
 ;; perl script mode

@@ -1988,7 +1988,7 @@ using the mouse."
 		    cscope-last-file nil
 		    )
 	      (setq cscope-process
-		    (apply 'start-process "cscope" outbuf
+		    (apply 'start-process "/usr/local/bin/cscope" outbuf
 			   cscope-program options))
 	      (set-process-filter cscope-process cscope-filter-func)
 	      (set-process-sentinel cscope-process cscope-sentinel-func)

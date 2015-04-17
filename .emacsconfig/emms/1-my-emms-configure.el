@@ -25,7 +25,7 @@
 
 ;; ======================music dir===============================
 (setq emms-source-file-directory-tree-function 'emms-source-file-directory-tree-find)
-(setq emms-info-mp3info-program-name "~/bin/mp3info")
+;;(setq emms-info-mp3info-program-name "~/bin/mp3info")
 (setq emms-source-file-default-directory "~/Music/")
 
 ;;我们希望在用 dired 时可以直接把一个音频文件添加到当前的播放列表中。配置如下：

@@ -24,5 +24,5 @@
             (local-set-key (kbd "C-c M-o") 'bh/mail-subtree)))
 
 ;; experimenting with docbook exports - not finished
-                                        ;(setq org-export-docbook-xsl-fo-proc-command "fop %s %s")
-                                        ;(setq org-export-docbook-xslt-proc-command "xsltproc --output %s ~/Documents/xml/docbook/stylesheet/nwalsh/fo/docbook.xsl %s")
+;;(setq org-export-docbook-xsl-fo-proc-command "fop %s %s")
+;;(setq org-export-docbook-xslt-proc-command "xsltproc --output %s ~/Documents/xml/docbook/stylesheet/nwalsh/fo/docbook.xsl %s")

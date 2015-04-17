@@ -93,7 +93,7 @@
 
 (defface highlight-symbol-face
   '((((class color) (background dark))
-     (:background "gray30"))
+     (:background "gray50"))
     (((class color) (background light))
      (:background "gray90")))
   "*Face used by `highlight-symbol-mode'."

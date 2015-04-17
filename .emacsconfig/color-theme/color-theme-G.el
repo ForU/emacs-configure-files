@@ -18,8 +18,8 @@
 
      ;;; Standard font lock faces
      (default ((t (nil))))
-     (font-lock-comment-face ((t (:foreground "red3" :italic t :bold t))))
-     (font-lock-comment-delimiter-face ((t (:foreground "red3" :italic t :bold t))))
+     (font-lock-comment-face ((t (:foreground "PaleGreen4" :bold t))))
+     (font-lock-comment-delimiter-face ((t (:foreground "PaleGreen4" :bold t))))
      (font-lock-doc-face ((t (:foreground "#77507b"))))
      (font-lock-doc-string-face ((t (:foreground "#77507b"))))
      (font-lock-string-face ((t (:foreground "#77507b"))))
@@ -39,9 +39,9 @@
      ;; Emacs Interface
      (fringe ((t (:background "white"))))
      ;; (border ((t (:background "#0f0f0f"))))
-     (mode-line ((t (:background "gray70" :foreground "black" :box (:line-width 1 :color "gray50")))))
-	 (mode-line-buffer-id ((t (:foreground "#2674f2" :bold t))))
-     (mode-line-inactive ((t (:background "gray90" :foreground "gray20" :box (:line-width 1 :color "gray70")))))
+     (mode-line ((t (:background "gray70" :foreground "black" :box (:line-width 1 :color "gray75" :style released-button)))))
+	 (mode-line-buffer-id ((t (:foreground "blue3" :bold t))))
+     (mode-line-inactive ((t (:background "gray90" :foreground "gray20" :weight light :box (:line-width 1 :color "gray70")))))
      (minibuffer-prompt ((t (:foreground "#2674f2"))))
      (region ((t (:background "gray70"))))
 
@@ -50,7 +50,7 @@
      (show-paren-mismatch-face ((t (:foreground "#2e3436" :background "#ef2929"))))
 
      ;; Line highlighting
-     (hl-line ((t (:background "#729fcf"))))
+     (hl-line ((t (:background "#C6CCD0" :underline t))))
 
      ;; Calendar
      (holiday-face ((t (:foreground "#cc0000")))) ; dark scarlet red
@@ -81,6 +81,20 @@
      (semantic-highlight-edits-face ((t (:background "#C6CCD0"))))
      ;; same as comment
      (linum ((t: (:foreground "gray30"))))
+     (moccur-face ((t (:background "gray70"))))
+     (trailing-whitespace ((t (:background "black"))))
+     (ecb-default-highlight-face ((t (:background "#B0C4DE" :foreground "#0709EE"))))
+     (ecb-default-general-face ((t (:background "#C6CCD0" :foreground "gray10" :slant normal :italic nil))))
+     ;;
+     (outline-1 ((t (:foreground "black"))))
+     (outline-2 ((t (:foreground "#F92672"))))
+     (outline-3 ((t (:foreground "#A6E22E"))))
+     (outline-4 ((t (:foreground "#AE81FF"))))
+     (outline-5 ((t (:foreground "#E6DB74"))))
+     (outline-6 ((t (:foreground "#66D9EF"))))
+     (outline-7 ((t (:foreground "#F92672"))))
+     (outline-8 ((t (:foreground "#A6E22E"))))
+
      ))
   (term-color-for-G)
   )
