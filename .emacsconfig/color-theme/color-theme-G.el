@@ -18,8 +18,8 @@
 
      ;;; Standard font lock faces
      (default ((t (nil))))
-     (font-lock-comment-face ((t (:foreground "PaleGreen4" :bold t))))
-     (font-lock-comment-delimiter-face ((t (:foreground "PaleGreen4" :bold t))))
+     (font-lock-comment-face ((t (:foreground "red3" :bold nil))))
+     (font-lock-comment-delimiter-face ((t (:foreground "red3" :bold t))))
      (font-lock-doc-face ((t (:foreground "#77507b"))))
      (font-lock-doc-string-face ((t (:foreground "#77507b"))))
      (font-lock-string-face ((t (:foreground "#77507b"))))

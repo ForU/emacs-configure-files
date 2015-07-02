@@ -26,6 +26,12 @@
 (global-set-key (kbd "M-]") 'diff-hl-next-hunk)
 (global-set-key (kbd "M-[") 'diff-hl-previous-hunk)
 
+(defun top()
+  (interactive)
+  (goto-percent 0) )
+
+(global-set-key (kbd "S-M-,") 'top)
+
 ;; ================================================================
 ;; redo:
 (define-key global-map (kbd "C-x C-/")  'redo)
